@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('proficiency_level')->nullable();
             $table->timestamps();
+
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
         });
     }
 

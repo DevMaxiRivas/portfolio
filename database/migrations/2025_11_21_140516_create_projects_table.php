@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('access_link')->nullable();
             $table->json('image_paths')->nullable();
             $table->json('image_names')->nullable();
+            $table->tinyInteger('relevance_level')->default(1);
+            $table->boolean('is_published')->default(false);
             $table->timestamps();
         });
     }
