@@ -10,8 +10,9 @@
             </div>
         @endif
         <div class="card-custom-content p-4">
-            <h4>{{ $project->title }}</h4>
-            <p>{{ substr($project->description, 0, 150) . (strlen($project->description) > 150 ? '...' : '') }}</p>
+            <h4>{{ $project->translated_title }}</h4>
+            <p>{{ substr($project->translated_description, 0, 150) . (strlen($project->translated_description) > 150 ? '...' : '') }}
+            </p>
             <a href="{{ $project->github_link }}" target="_blank"
                 class="link-custom btn_see">{{ __('homepage.projects-section.btn-see_project') }}</a>
         </div>
