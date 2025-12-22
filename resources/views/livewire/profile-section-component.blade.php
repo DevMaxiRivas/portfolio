@@ -3,8 +3,8 @@
 
                 <div class="row pb-4" data-aos="fade-up">
                     <div class="col-lg-8">
-                        <h6 class="text-brand">PROFILES</h6>
-                        <h1>Profiles in which I stand out</h1>
+                        <h6 class="text-uppercase text-brand">{{ __('homepage.profile-section.title') }}</h6>
+                        <h2 class="text-capitalize">{{ __('homepage.profile-section.subtitle') }}</h2>
                     </div>
                 </div>
 
@@ -15,13 +15,11 @@
                             <div class="iconbox rounded-4">
                                 <i class="las la-feather"></i>
                             </div>
-                            <h5 class="mt-4 mb-2">Consultant</h5>
+                            <h5 class="text-capitalize mt-4 mb-2">
+                                {{ __('homepage.profile-section.cards-profiles.profile-1.title') }}
+                            </h5>
                             <p>
-                                I analyze business requirements to determine technological solutions. I recommend
-                                systems and applications that optimize the operational and strategic processes of
-                                the organization. I plan and coordinate the implementation of new systems or
-                                improvements to existing ones.
-                            </p>
+                                {{ __('homepage.profile-section.cards-profiles.profile-1.description') }}</p>
                         </div>
                     </div>
 
@@ -30,13 +28,11 @@
                             <div class="iconbox rounded-4">
                                 <i class="las la-pencil-ruler"></i>
                             </div>
-                            <h5 class="mt-4 mb-2">Support Expert</h5>
+                            <h5 class="text-capitalize mt-4 mb-2">
+                                {{ __('homepage.profile-section.cards-profiles.profile-2.title') }}
+                            </h5>
                             <p>
-                                I guarantee the correct operation of systems and applications. I diagnose and solve
-                                technical problems quickly and efficiently. I identify and implement improvements
-                                to systems to increase their efficiency. I manage software and operating system upgrades
-                                and patches.
-                            </p>
+                                {{ __('homepage.profile-section.cards-profiles.profile-2.description') }}</p>
                         </div>
                     </div>
 
@@ -45,15 +41,13 @@
                             <div class="iconbox rounded-4">
                                 <i class="las la-laptop-code"></i>
                             </div>
-                            <h5 class="mt-4 mb-2">Exchange Agent</h5>
+                            <h5 class="text-capitalize mt-4 mb-2">
+                                {{ __('homepage.profile-section.cards-profiles.profile-3.title') }}
+                            </h5>
                             <p>
-                                I plan and direct the activities required to implement changes to technology systems and
-                                processes. I perform change impact analysis and adjust strategies as needed within the
-                                organization. I identify and mitigate user resistance to change.
-                            </p>
+                                {{ __('homepage.profile-section.cards-profiles.profile-3.description') }}</p>
                         </div>
                     </div>
-
                 </div>
 
             </div>

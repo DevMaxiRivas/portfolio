@@ -3,8 +3,8 @@
 
                 <div class="row pb-4" data-aos="fade-up">
                     <div class="col-lg-8">
-                        <h6 class="text-brand">WORK</h6>
-                        <h1>My Most Important Projects</h1>
+                        <h6 class="text-uppercase text-brand">{{ __('homepage.projects-section.title') }}</h6>
+                        <h2 class="text-capitalize">{{ __('homepage.projects-section.subtitle') }}</h2>
                     </div>
                 </div>
 

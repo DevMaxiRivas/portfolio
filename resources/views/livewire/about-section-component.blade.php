@@ -3,15 +3,16 @@
 
                 <div class="row pb-4" data-aos="fade-up">
                     <div class="col-lg-8">
-                        <h6 class="text-brand">ABOUT ME</h6>
-                        <h1>My Education & Experiance</h1>
+                        <h6 class="text-uppercase text-brand">{{ __('homepage.about_me-section.title') }}</h6>
+                        <h2 class="text-capitalize">{{ __('homepage.about_me-section.subtitle') }}</h2>
                     </div>
                 </div>
 
                 <div class="row gy-5">
                     <div class="col-lg-6">
 
-                        <h3 class="mb-4" data-aos="fade-up" data-aos-delay="300">Education</h3>
+                        <h3 class="text-capitalize mb-4" data-aos="fade-up" data-aos-delay="300">
+                            {{ __('homepage.about_me-section.education-section.title') }}</h3>
                         <div class="row gy-4">
 
                             <div class="col-12" data-aos="fade-up" data-aos-delay="600">
@@ -42,7 +43,9 @@
 
                     <div class="col-lg-6">
 
-                        <h3 class="mb-4" data-aos="fade-up" data-aos-delay="300">Experiance</h3>
+                        <h3 class="text-capitalize mb-4" data-aos="fade-up" data-aos-delay="300">
+                            {{ __('homepage.about_me-section.experience-section.title') }}
+                        </h3>
                         <div class="row gy-4">
 
                             <div class="col-12" data-aos="fade-up" data-aos-delay="600">

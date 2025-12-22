@@ -3,7 +3,7 @@
                 <div class="container">
                     <div class="row gy-4 justify-content-between">
                         <div class="col-auto">
-                            <p class="mb-0">Social Networks</p>
+                            <p class="text-capitalize mb-0">{{ __('homepage.footer.social-networks') }}</p>
                         </div>
                         <div class="col-auto">
                             <div class="social-icons">
