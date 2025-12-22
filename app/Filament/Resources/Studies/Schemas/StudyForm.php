@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Filament\Resources\Education\Schemas;
+namespace App\Filament\Resources\Studies\Schemas;
 
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
-class EducationForm
+class StudyForm
 {
     public static function configure(Schema $schema): Schema
     {
@@ -19,10 +19,14 @@ class EducationForm
                 DatePicker::make('start_date')
                     ->required(),
                 DatePicker::make('end_date'),
-                TextInput::make('field_of_study'),
-                TextInput::make('description'),
-                TextInput::make('certificate_link'),
-                TextInput::make('location'),
+                TextInput::make('field_of_study')
+                    ->default(null),
+                TextInput::make('description')
+                    ->default(null),
+                TextInput::make('certificate_link')
+                    ->default(null),
+                TextInput::make('location')
+                    ->default(null),
             ]);
     }
 }

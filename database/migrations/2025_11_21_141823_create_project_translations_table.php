@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('project_translations', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->string('github_link')->nullable();
-            $table->string('access_link')->nullable();
-            $table->json('image_paths')->nullable();
-            $table->json('image_names')->nullable();
-            $table->tinyInteger('relevance_level')->default(1);
-            $table->boolean('is_published')->default(false);
+
+            $table->foreignId('project_id')->constrained()->onDelete('cascade');
+            $table->foreignId('language_id')->constrained()->onDelete('cascade');
+
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('projects');
+        Schema::dropIfExists('project_translations');
     }
 };

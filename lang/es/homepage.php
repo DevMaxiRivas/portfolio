@@ -35,7 +35,7 @@ return [
         "experience-section" => [
             "title" => "experiencia",
         ],
-        "education-section" => [
+        "study-section" => [
             "title" => "educación",
         ]
     ],

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('proficiency_level')->nullable();
-            $table->char('acronym', length: 3)->unique();
+            $table->char('acronym', length: 2)->unique();
             $table->timestamps();
         });
     }

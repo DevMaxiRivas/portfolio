@@ -31,12 +31,12 @@ return [
     ],
     "about_me-section" => [
         "title" => "about me",
-        "subtitle" => "my education & experiance",
+        "subtitle" => "my study & experiance",
         "experience-section" => [
             "title" => "experience",
         ],
-        "education-section" => [
-            "title" => "education",
+        "study-section" => [
+            "title" => "study",
         ]
     ],
     "contact-section" => [

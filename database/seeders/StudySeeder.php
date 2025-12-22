@@ -2,18 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\Education;
+use App\Models\Study;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class EducationSeeder extends Seeder
+class StudySeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Education::insert([
+        Study::insert([
             [
                 'institution_name' => 'National University of Salta',
                 'degree' => "Bachelor's Degree in Systems Analysis",

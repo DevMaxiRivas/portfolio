@@ -12,7 +12,7 @@
                     <div class="col-lg-6">
 
                         <h3 class="text-capitalize mb-4" data-aos="fade-up" data-aos-delay="300">
-                            {{ __('homepage.about_me-section.education-section.title') }}</h3>
+                            {{ __('homepage.about_me-section.study-section.title') }}</h3>
                         <div class="row gy-4">
 
                             <div class="col-12" data-aos="fade-up" data-aos-delay="600">

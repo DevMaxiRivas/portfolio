@@ -44,7 +44,7 @@
                     </li>
 
                     <!-- Menú desplegable para seleccionar idioma -->
-                    @livewire('language-component')
+                    <livewire:language-component />
 
                 </ul>
             </div>

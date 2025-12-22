@@ -18,12 +18,12 @@ class LanguageSeeder extends Seeder
                 [
                     'name' => 'English',
                     'proficiency_level' => 'Fluent',
-                    'acronym' => 'ENG',
+                    'acronym' => 'en',
                 ],
                 [
                     'name' => 'Spanish',
                     'proficiency_level' => 'Native',
-                    'acronym' => 'ESP',
+                    'acronym' => 'es',
                 ],
             ]
         );
