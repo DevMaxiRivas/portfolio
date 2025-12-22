@@ -28,32 +28,23 @@
                 <ul class="navbar-nav ms-auto flex-lg-column text-lg-center">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link" href="#home">{{ __('navbar.home') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#profiles">Profiles</a>
+                        <a class="nav-link" href="#profiles">{{ __('navbar.profiles') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#work">Work</a>
+                        <a class="nav-link" href="#work">{{ __('navbar.work') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About Me</a>
+                        <a class="nav-link" href="#about">{{ __('navbar.about_me') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="#contact">{{ __('navbar.contact') }}</a>
                     </li>
 
                     <!-- Menú desplegable para seleccionar idioma -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLanguage" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Language
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownLanguage">
-                            <a class="text-brand dropdown-item" href="#">ENGLISH</a>
-                            <a class="text-brand dropdown-item" href="#">SPANISH</a>
-                        </div>
-                    </li>
+                    @livewire('language-component')
 
                 </ul>
             </div>
