@@ -20,4 +20,6 @@
                         <p>No projects found.</p>
                     </div>
                 @endif
+
+                {{-- <livewire:list-cards-component /> --}}
         </section>

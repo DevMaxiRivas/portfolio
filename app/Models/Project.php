@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Project extends Model
 {
@@ -60,5 +61,12 @@ class Project extends Model
             ->first()
             ->description ??
             $this->description;
+    }
+
+    public function getImagesUrlsAttribute(): ?string
+    {
+        return $this->image_paths?->map(function ($path) {
+            return Storage::disk('local')->temporaryUrl($path, now()->addMinutes(5));
+        });
     }
 }

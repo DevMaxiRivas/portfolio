@@ -2,20 +2,18 @@
 
 namespace App\Providers;
 
-use App\Interfaces\ProjectRepositoryInterface;
 use App\Repositories\ProjectRepository;
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class ProjectServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
      */
     public function register(): void
     {
-        $this->app->bind(ProjectRepositoryInterface::class, ProjectRepository::class);
+        $this->app->bind(ProjectRepository::class, ProjectRepository::class);
     }
-
     /**
      * Bootstrap any application services.
      */
