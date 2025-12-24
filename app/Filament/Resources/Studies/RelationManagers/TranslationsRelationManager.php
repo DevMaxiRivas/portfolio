@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Filament\Resources\Projects\RelationManagers;
+namespace App\Filament\Resources\Studies\RelationManagers;
 
-use Dom\Text;
 use Filament\Actions\AssociateAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\CreateAction;
@@ -12,56 +11,57 @@ use Filament\Actions\DissociateAction;
 use Filament\Actions\DissociateBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\Hidden;
-use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Log;
 
-class ProjectTranslationRelationManager extends RelationManager
+class TranslationsRelationManager extends RelationManager
 {
     protected static string $relationship = 'translations';
 
     public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
-        return __('database.tables.translation_projects.plural');
+        return __('database.tables.translation_studies.plural');
     }
 
     public function form(Schema $schema): Schema
     {
         return $schema
             ->components([
-                TextInput::make('title')
-                    ->label(__('database.tables.translation_projects.columns.title'))
-                    ->required()
-                    ->maxLength(255),
+                TextInput::make('institution_name')
+                    ->label(__('database.tables.studies.columns.institution_name'))
+                    ->required(),
+                TextInput::make('degree')
+                    ->label(__('database.tables.studies.columns.degree'))
+                    ->required(),
+                Textarea::make('description')
+                    ->label(__('database.tables.studies.columns.description'))
+                    ->columnSpanFull()
+                    ->default(null),
                 Select::make('language_id')
                     ->label(__('database.tables.translation_projects.columns.language'))
                     ->relationship('language', 'acronym')
                     ->required(),
-                Hidden::make('project_id')
+                TextInput::make('location')
+                    ->label(__('database.tables.studies.columns.location'))
+                    ->default(null),
+                Hidden::make('study_id')
                     ->default(fn() => $this->ownerRecord->id),
-                Textarea::make('description')
-                    ->label(__('database.tables.translation_projects.columns.description'))
-                    ->required()
-                    ->columnSpanFull()
-                    ->nullable(),
             ]);
     }
 
     public function table(Table $table): Table
     {
         return $table
-            ->recordTitleAttribute('title')
+            ->recordTitleAttribute('institution_name')
             ->columns([
-                TextColumn::make('title')
-                    ->label(__('database.tables.translation_projects.columns.title'))
+                TextColumn::make('institution_name')
+                    ->label(__('database.tables.translation_studies.columns.institution_name'))
                     ->searchable(),
             ])
             ->filters([
@@ -77,7 +77,6 @@ class ProjectTranslationRelationManager extends RelationManager
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DissociateBulkAction::make(),
                     DeleteBulkAction::make(),
                 ]),
             ]);

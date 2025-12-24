@@ -3,15 +3,18 @@
 namespace App\Livewire;
 
 use App\Services\ProjectService;
+use App\Services\StudyService;
 use Livewire\Component;
 
 class HomePage extends Component
 {
     protected ProjectService $projectService;
+    protected StudyService $studyService;
 
-    public function mount(ProjectService $projectService)
+    public function mount(ProjectService $projectService, StudyService $studyService)
     {
         $this->projectService = $projectService;
+        $this->studyService = $studyService;
     }
 
     public function render()
@@ -28,8 +31,8 @@ class HomePage extends Component
                 'id' => 'work',
                 'title' => __('homepage.studies-section.title'),
                 'subtitle' => __('homepage.studies-section.subtitle'),
-                'projects' => $this->projectService->getAllProjects(),
-                'btn_label' => __('homepage.studies-section.btn-see_project'),
+                'projects' => $this->studyService->getAllStudies(),
+                'btn_label' => '',
             ]
         ]);
     }

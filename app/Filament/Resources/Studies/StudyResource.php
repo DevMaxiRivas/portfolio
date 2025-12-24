@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Studies;
 use App\Filament\Resources\Studies\Pages\CreateStudy;
 use App\Filament\Resources\Studies\Pages\EditStudy;
 use App\Filament\Resources\Studies\Pages\ListStudies;
+use App\Filament\Resources\Studies\RelationManagers\TranslationsRelationManager;
 use App\Filament\Resources\Studies\Schemas\StudyForm;
 use App\Filament\Resources\Studies\Tables\StudiesTable;
 use App\Models\Study;
@@ -22,6 +23,16 @@ class StudyResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'institution_name';
 
+    public static function getPluralModelLabel(): string
+    {
+        return __('database.tables.studies.plural');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('database.tables.studies.singular');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return StudyForm::configure($schema);
@@ -35,7 +46,7 @@ class StudyResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            TranslationsRelationManager::class,
         ];
     }
 

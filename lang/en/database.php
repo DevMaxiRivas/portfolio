@@ -37,9 +37,9 @@ return [
                 "name" => "Name",
             ],
         ],
-        "studys" => [
-            "singular" => "study",
-            "plural" => "studys",
+        "studies" => [
+            "singular" => "Study",
+            "plural" => "Studies",
             "columns" => [
                 "institution_name" => "Institution",
                 "degree" => "Degree",
@@ -50,6 +50,19 @@ return [
                 "certificate_link" => "Certificate Link",
                 "location" => "Location",
             ]
+        ],
+        "translation_studies" => [
+            "singular" => "Translation Study",
+            "plural" => "Translation Studies",
+            "columns" => [
+                "institution_name" => "Institution Name",
+                "degree" => "Degree",
+                "field_of_study" => "Field of Study",
+                "description" => "Description",
+                "certificate_link" => "Certificate Link",
+                "location" => "Location",
+                "language" => "Language",
+            ],
         ],
     ]
 ];

@@ -15,28 +15,28 @@ class StudiesTable
         return $table
             ->columns([
                 TextColumn::make('institution_name')
+                    ->label(__('database.tables.studies.columns.institution_name'))
                     ->searchable(),
                 TextColumn::make('degree')
+                    ->label(__('database.tables.studies.columns.degree'))
                     ->searchable(),
                 TextColumn::make('start_date')
-                    ->date()
-                    ->sortable(),
-                TextColumn::make('end_date')
+                    ->label(__('database.tables.studies.columns.start_date'))
                     ->date()
                     ->sortable(),
                 TextColumn::make('field_of_study')
-                    ->searchable(),
-                TextColumn::make('description')
-                    ->searchable(),
-                TextColumn::make('certificate_link')
+                    ->label(__('database.tables.studies.columns.field_of_study'))
                     ->searchable(),
                 TextColumn::make('location')
+                    ->label(__('database.tables.studies.columns.location'))
                     ->searchable(),
                 TextColumn::make('created_at')
+                    ->label(__('database.tables.studies.columns.created_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label(__('database.tables.studies.columns.updated_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

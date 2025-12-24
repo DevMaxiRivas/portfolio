@@ -8,7 +8,7 @@ return [
     ],
     "profile-section" => [
         "title" => "perfiles",
-        "subtitle" => "perfiles en los que me destaco",
+        "subtitle" => "perfiles en los que destaco",
         "cards-profiles" => [
             "profile-1" => [
                 "title" => "desarrollador web",
@@ -28,6 +28,10 @@ return [
         "title" => "mis proyectos",
         "subtitle" => "algunos de mis proyectos más recientes",
         "btn-see_project" => "ver proyecto"
+    ],
+    "studies-section" => [
+        "title" => "mis estudios",
+        "subtitle" => "algunos de mis estudios más recientes",
     ],
     "about_me-section" => [
         "title" => "sobre mí",

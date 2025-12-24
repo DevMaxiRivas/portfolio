@@ -14,4 +14,9 @@ class Study extends Model
         'end_date',
         'description',
     ];
+
+    public function translations()
+    {
+        return $this->hasMany(StudyTranslation::class);
+    }
 }
