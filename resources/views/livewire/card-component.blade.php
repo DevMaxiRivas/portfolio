@@ -13,7 +13,7 @@
             <p>{{ substr($description, 0, 150) . (strlen($description) > 150 ? '...' : '') }}
             </p>
             @if (!empty($link))
-                <a href="{{ $link }}" target="_blank" class="link-custom btn_see">
+                <a href="{{ $link }}" target="_blank" class="text-capitalize link-custom btn_see">
                     {{ __($btn_label) }}
                 </a>
             @endif

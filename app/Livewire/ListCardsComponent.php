@@ -6,11 +6,13 @@ use Livewire\Component;
 
 class ListCardsComponent extends Component
 {
-    public array $element_list = [];
+    public array $element_list;
+    public string $btn_label;
 
-    public function mount(array $element_list)
+    public function mount(array $element_list = [], string $btn_label = "")
     {
         $this->element_list = $element_list;
+        $this->btn_label = $btn_label;
     }
 
     public function render()

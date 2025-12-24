@@ -63,10 +63,10 @@ class Project extends Model
             $this->description;
     }
 
-    public function getImagesUrlsAttribute(): ?string
+    public function getImagesUrlsAttribute(): ?array
     {
-        return $this->image_paths?->map(function ($path) {
+        return !empty($this->image_paths) ? array_map(function ($path) {
             return Storage::disk('local')->temporaryUrl($path, now()->addMinutes(5));
-        });
+        }, $this->image_paths) : null;
     }
 }

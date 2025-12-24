@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Studies\Schemas;
 
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
@@ -20,8 +21,10 @@ class StudyForm
                     ->required(),
                 DatePicker::make('end_date'),
                 TextInput::make('field_of_study')
+                    ->columnSpanFull()
                     ->default(null),
-                TextInput::make('description')
+                Textarea::make('description')
+                    ->columnSpanFull()
                     ->default(null),
                 TextInput::make('certificate_link')
                     ->default(null),

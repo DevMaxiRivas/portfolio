@@ -18,10 +18,18 @@ class HomePage extends Component
     {
         return view('livewire.home-page', [
             'projects_section' => [
+                'id' => 'work',
                 'title' => __('homepage.projects-section.title'),
                 'subtitle' => __('homepage.projects-section.subtitle'),
                 'projects' => $this->projectService->getAllProjects(),
-                'btn_label' => __('homepage.projects-section.btn_label'),
+                'btn_label' => __('homepage.projects-section.btn-see_project'),
+            ],
+            'studies_section' => [
+                'id' => 'work',
+                'title' => __('homepage.studies-section.title'),
+                'subtitle' => __('homepage.studies-section.subtitle'),
+                'projects' => $this->projectService->getAllProjects(),
+                'btn_label' => __('homepage.studies-section.btn-see_project'),
             ]
         ]);
     }

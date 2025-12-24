@@ -8,15 +8,22 @@ use App\Models\Project;
 
 class ProjectService
 {
-    private ProjectRepositoryInterface $repo;
+    private final ProjectRepositoryInterface $repo;
 
     public function __construct(ProjectRepositoryInterface $repo)
     {
         $this->repo = $repo;
     }
 
-    public function getAllProjects()
+    // public function getAllProjects()
+    // {
+    //     return $this->repo->getAllProjects()->map(fn($project) => ProjectShowDTO::fromModel($project)->toArray())->toArray();
+    // }
+    public function getAllProjects(): array
     {
-        return $this->repo->getAllProjects()->map(fn($project) => ProjectShowDTO::fromModel($project)->toArray())->toArray();
+        return array_map(
+            fn($project) => ProjectShowDTO::fromArray($project)->toArray(),
+            $this->repo->getAllTranslatedProjects()
+        );
     }
 }

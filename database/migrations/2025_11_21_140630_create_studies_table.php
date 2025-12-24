@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('start_date');
             $table->date('end_date')->nullable();
             $table->string('field_of_study')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->string('certificate_link')->nullable();
             $table->string('location')->nullable();
 

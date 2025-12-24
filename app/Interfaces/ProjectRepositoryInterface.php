@@ -4,5 +4,6 @@ namespace App\Interfaces;
 
 interface ProjectRepositoryInterface
 {
-    public function getAllProjects();
+    public function getAllProjects(): array;
+    public function getAllTranslatedProjects(): array;
 }

@@ -7,17 +7,17 @@ use Livewire\Component;
 class CardComponent extends Component
 {
     public string $title;
-    public ?string $subtittle;
+    public ?string $subtitle;
     public array $images_urls;
     public string $description;
     public ?string $link;
     public ?string $btn_label;
     const MAX_DESCRIPTION_LENGTH = 100;
 
-    public function mount(string $title, ?string $subtittle, string $description, array $images_urls, ?string $link, ?string $btn_label)
+    public function mount(string $title, ?string $subtitle, string $description, array $images_urls, ?string $link, ?string $btn_label)
     {
         $this->title = $title;
-        $this->subtittle = $subtittle;
+        $this->subtitle = $subtitle;
         $this->images_urls = $images_urls;
         $this->description = $description;
         $this->link = $link;
