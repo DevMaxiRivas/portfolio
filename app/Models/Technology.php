@@ -15,4 +15,9 @@ class Technology extends Model
     protected $casts = [
         "proficiency_level" => ProficiencyLevelTechnologyEnum::class,
     ];
+
+    public function projects()
+    {
+        return $this->belongsToMany(Project::class);
+    }
 }

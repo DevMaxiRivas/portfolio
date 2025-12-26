@@ -28,6 +28,16 @@ class ProjectForm
                 Toggle::make('is_visible')
                     ->default(true)
                     ->label(__('database.tables.projects.columns.is_visible')),
+                // Select::make('technologies')
+                //     ->label('Tecnologías')
+                //     ->multiple()
+                //     ->relationship('technologies'),
+                Select::make('technologies')
+                    ->multiple() // Allows selection of multiple options
+                    ->relationship(name: 'technologies', titleAttribute: 'name') // 'categories' is the relationship name, 'name' is the column to display
+                    ->preload() // Optionally loads all options initially for a better UX
+                    ->searchable(), // Optionally adds search functionality
+
                 FileUpload::make('image_paths')
                     ->preserveFilenames()
                     ->label(__('database.tables.projects.columns.image_paths'))

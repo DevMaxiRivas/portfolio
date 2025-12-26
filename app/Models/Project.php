@@ -22,11 +22,6 @@ class Project extends Model
         'image_names' => 'array',
     ];
 
-    public function technologies()
-    {
-        return $this->belongsToMany(Technology::class, 'project_technologies');
-    }
-
     public function language()
     {
         return $this->belongsTo(Language::class);
@@ -35,6 +30,11 @@ class Project extends Model
     public function translations()
     {
         return $this->hasMany(ProjectTranslation::class);
+    }
+
+    public function technologies()
+    {
+        return $this->belongsToMany(Technology::class);
     }
 
     public function getAnyPicturesAttribute(): int
