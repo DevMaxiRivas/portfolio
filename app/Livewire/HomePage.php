@@ -25,7 +25,7 @@ class HomePage extends Component
     {
         return view('livewire.home-page', [
             'projects_section' => [
-                'id' => 'work',
+                'id' => 'projects',
                 'title' => __('homepage.projects-section.title'),
                 'subtitle' => __('homepage.projects-section.subtitle'),
                 'projects' => $this->projectService->getAllProjects(),
