@@ -19,8 +19,8 @@ class StudyShowDTO
 
     private static function formatSubtitle(string $institution_name, Carbon $start_date, ?Carbon $end_date): string
     {
-        $startDate = $start_date->format('Y');
-        $endDate = $end_date ? $end_date->format('Y') : 'Present';
+        $startDate = __('months.' . $start_date->format('F')) . ' ' . $start_date->format('Y');
+        $endDate = $end_date ? __('months.' . $end_date->format('F')) . ' ' . $end_date->format('Y') : 'Present';
         return $institution_name . ' (' . $startDate . ' - ' . $endDate . ')';
     }
 

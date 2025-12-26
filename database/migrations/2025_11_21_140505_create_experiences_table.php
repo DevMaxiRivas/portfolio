@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('position');
             $table->date('start_date');
             $table->date('end_date')->nullable();
+            $table->boolean('is_visible')->default(true);
 
             $table->timestamps();
         });

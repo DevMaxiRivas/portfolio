@@ -29,6 +29,14 @@ return [
         "subtitle" => "some of my most recent projects",
         "btn-see_project" => "see project"
     ],
+    "studies-section" => [
+        "title" => "my studies",
+        "subtitle" => "most recent",
+    ],
+    "experiences-section" => [
+        "title" => "my experiences",
+        "subtitle" => "most recent",
+    ],
     "about_me-section" => [
         "title" => "about me",
         "subtitle" => "my study & experiance",

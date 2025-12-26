@@ -9,20 +9,6 @@ class ExperienceShowDTO
     /**
      * Create a new class instance.
      */
-    const MONTHS = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December'
-    ];
     public function __construct(
         public string $title,
         public string $subtitle,
@@ -33,8 +19,8 @@ class ExperienceShowDTO
 
     private static function formatSubtitle(string $company_name, Carbon $start_date, ?Carbon $end_date): string
     {
-        $startDate = __('months.' . self::MONTHS[$start_date->month - 1]) . ' ' . $start_date->format('Y');
-        $endDate = $end_date ? __('months.' . self::MONTHS[$end_date->month - 1]) . ' ' . $end_date->format('Y') : 'Present';
+        $startDate = __('months.' . $start_date->format('F')) . ' ' . $start_date->format('Y');
+        $endDate = $end_date ? __('months.' . $end_date->format('F')) . ' ' . $end_date->format('Y') : 'Present';
         return $company_name . ' (' . $startDate . ' - ' . $endDate . ')';
     }
 
