@@ -7,6 +7,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 
 class LanguagesTable
 {
@@ -15,9 +16,10 @@ class LanguagesTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label(__('database.tables.languages.columns.name'))
                     ->searchable(),
                 TextColumn::make('proficiency_level')
-                    ->searchable(),
+                    ->label(__('database.tables.languages.columns.proficiency_level')),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

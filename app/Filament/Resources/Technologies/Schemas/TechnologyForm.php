@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Technologies\Schemas;
 
+use App\Enums\ProficiencyLevelTechnologyEnum;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
@@ -12,8 +14,11 @@ class TechnologyForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label(__('database.tables.technologies.columns.name'))
                     ->required(),
-                TextInput::make('proficiency_level'),
+                Select::make('proficiency_level')
+                    ->label(__('database.tables.technologies.columns.proficiency_level'))
+                    ->options(ProficiencyLevelTechnologyEnum::class),
             ]);
     }
 }

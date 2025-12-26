@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\ProficiencyLevelLanguageEnum;
 use Illuminate\Database\Eloquent\Model;
 
 class Language extends Model
@@ -9,7 +10,11 @@ class Language extends Model
     protected $fillable = [
         'name',
         'proficiency_level',
-        'acronym',
+        'acronym'
+    ];
+
+    protected $casts = [
+        'proficiency_level' => ProficiencyLevelLanguageEnum::class,
     ];
 
     public function projects()

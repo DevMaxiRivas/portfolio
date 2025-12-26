@@ -14,7 +14,13 @@ return new class extends Migration
         Schema::create('technologies', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->string('proficiency_level')->nullable();
+            $table->enum('proficiency_level', [
+                'beginner',
+                'intermediate',
+                'advanced',
+                'expert',
+            ])
+                ->default('beginner');;
             $table->timestamps();
 
             $table->foreignId('category_id')->constrained()->onDelete('cascade');

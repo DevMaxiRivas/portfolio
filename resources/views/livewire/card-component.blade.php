@@ -17,6 +17,13 @@
                     {{ __($btn_label) }}
                 </a>
             @endif
+            @if (!empty($tags))
+                <div class="d-block mt-2">
+                    @foreach ($tags as $tag)
+                        <span class="badge bg-primary">{{ $tag }}</span>
+                    @endforeach
+                </div>
+            @endif
         </div>
     </div>
 </div>

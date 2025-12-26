@@ -22,6 +22,14 @@ class LanguageResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
+    public static function getModelLabel(): string
+    {
+        return __('database.tables.languages.singular');
+    }
+    public static function getModelPluralLabel(): string
+    {
+        return __('database.tables.languages.plural');
+    }
     public static function form(Schema $schema): Schema
     {
         return LanguageForm::configure($schema);

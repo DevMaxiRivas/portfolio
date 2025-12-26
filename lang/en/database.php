@@ -64,5 +64,5 @@ return [
                 "language" => "Language",
             ],
         ],
-    ]
+    ],
 ];

@@ -22,6 +22,16 @@ class TechnologyResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
+    public static function getModelLabel(): string
+    {
+        return __('database.tables.technologies.singular');
+    }
+
+    public static function getModelPluralLabel(): string
+    {
+        return __('database.tables.technologies.singular');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return TechnologyForm::configure($schema);

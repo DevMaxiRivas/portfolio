@@ -70,7 +70,43 @@ return [
                 "description" => "Descripción",
                 "language" => "Idioma",
             ],
+        ],
+        "languages" => [
+            "singular" => "Idioma",
+            "plural" => "Idiomas",
+            "columns" => [
+                "name" => "Nombre",
+                "acronym" => "Acronimo",
+                "proficiency_level" => "Nivel de Proficiencia",
+            ]
+        ],
+        "technologies" => [
+            "singular" => "Tecnología",
+            "plural" => "Tecnologías",
+            "columns" => [
+                "name" => "Nombre",
+                "proficiency_level" => "Nivel de Proficiencia",
+            ]
+        ]
+    ],
+    "enums" => [
+        "tables" => [
+            "languages" => [
+                "proficiency_level" => [
+                    "beginner" => "Principiante",
+                    "intermediate" => "Intermedio",
+                    "advanced" => "Avanzado",
+                    "expert" => "Experto",
+                ]
+            ],
+            "technologies" => [
+                "proficiency_level" => [
+                    "beginner" => "Principiante",
+                    "intermediate" => "Intermedio",
+                    "advanced" => "Avanzado",
+                    "expert" => "Experto",
+                ]
+            ]
         ]
     ]
-
 ];
