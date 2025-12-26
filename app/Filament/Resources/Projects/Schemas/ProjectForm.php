@@ -18,6 +18,7 @@ class ProjectForm
             ->components([
                 TextInput::make('title')
                     ->label(__('database.tables.projects.columns.title'))
+                    ->unique()
                     ->columnSpanFull()
                     ->required(),
                 TextInput::make('github_link')
@@ -25,6 +26,7 @@ class ProjectForm
                 TextInput::make('access_link')
                     ->label(__('database.tables.projects.columns.access_link')),
                 Toggle::make('is_visible')
+                    ->default(true)
                     ->label(__('database.tables.projects.columns.is_visible')),
                 FileUpload::make('image_paths')
                     ->preserveFilenames()

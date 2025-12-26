@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Projects\RelationManagers;
 
+use App\Models\Language;
+use App\Models\ProjectTranslation;
 use Dom\Text;
 use Filament\Actions\AssociateAction;
 use Filament\Actions\BulkActionGroup;
@@ -31,6 +33,16 @@ class TranslationsRelationManager extends RelationManager
         return __('database.tables.translation_projects.plural');
     }
 
+    public static function getPluralModelLabel(): string
+    {
+        return __('database.tables.translation_projects.plural');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('database.tables.translation_projects.singular');
+    }
+
     public function form(Schema $schema): Schema
     {
         return $schema
@@ -41,8 +53,19 @@ class TranslationsRelationManager extends RelationManager
                     ->maxLength(255),
                 Select::make('language_id')
                     ->label(__('database.tables.translation_projects.columns.language'))
-                    ->relationship('language', 'acronym')
-                    ->getOptionLabelFromRecordUsing(fn(Model $record) => strtoupper($record->acronym))
+                    ->options(
+                        Language::whereNotIn(
+                            'id',
+                            ProjectTranslation::where(
+                                'project_id',
+                                $this->ownerRecord->id
+                            )
+                                ->pluck('language_id')
+                        )->pluck('acronym', 'id')
+                            ->map(function ($language) {
+                                return strtoupper($language);
+                            })
+                    )
                     ->required(),
                 Hidden::make('project_id')
                     ->default(fn() => $this->ownerRecord->id),
