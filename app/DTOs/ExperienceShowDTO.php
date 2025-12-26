@@ -4,11 +4,25 @@ namespace App\DTOs;
 
 use Carbon\Carbon;
 
-class StudyShowDTO
+class ExperienceShowDTO
 {
     /**
      * Create a new class instance.
      */
+    const MONTHS = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+    ];
     public function __construct(
         public string $title,
         public string $subtitle,
@@ -17,19 +31,19 @@ class StudyShowDTO
         public ?string $link,
     ) {}
 
-    private static function formatSubtitle(string $institution_name, Carbon $start_date, ?Carbon $end_date): string
+    private static function formatSubtitle(string $company_name, Carbon $start_date, ?Carbon $end_date): string
     {
-        $startDate = $start_date->format('Y');
-        $endDate = $end_date ? $end_date->format('Y') : 'Present';
-        return $institution_name . ' (' . $startDate . ' - ' . $endDate . ')';
+        $startDate = __('months.' . self::MONTHS[$start_date->month - 1]) . ' ' . $start_date->format('Y');
+        $endDate = $end_date ? __('months.' . self::MONTHS[$end_date->month - 1]) . ' ' . $end_date->format('Y') : 'Present';
+        return $company_name . ' (' . $startDate . ' - ' . $endDate . ')';
     }
 
     public static function fromArray(array $data): self
     {
         return new self(
-            title: $data['degree'],
+            title: $data['position'],
             subtitle: self::formatSubtitle(
-                institution_name: $data['institution_name'],
+                company_name: $data['company_name'],
                 start_date: Carbon::parse($data['start_date']),
                 end_date: $data['end_date'] ? Carbon::parse($data['end_date']) : null
             ),

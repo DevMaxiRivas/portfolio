@@ -2,19 +2,23 @@
 
 namespace App\Livewire;
 
+use App\Models\Experience;
+use App\Services\ExperienceService;
 use App\Services\ProjectService;
 use App\Services\StudyService;
 use Livewire\Component;
 
 class HomePage extends Component
 {
-    protected ProjectService $projectService;
-    protected StudyService $studyService;
+    protected final ProjectService $projectService;
+    protected final StudyService $studyService;
+    protected final ExperienceService $experienceService;
 
-    public function mount(ProjectService $projectService, StudyService $studyService)
+    public function mount(ProjectService $projectService, StudyService $studyService, ExperienceService $experienceService)
     {
         $this->projectService = $projectService;
         $this->studyService = $studyService;
+        $this->experienceService = $experienceService;
     }
 
     public function render()
@@ -28,10 +32,17 @@ class HomePage extends Component
                 'btn_label' => __('homepage.projects-section.btn-see_project'),
             ],
             'studies_section' => [
-                'id' => 'work',
+                'id' => 'studies',
                 'title' => __('homepage.studies-section.title'),
                 'subtitle' => __('homepage.studies-section.subtitle'),
                 'projects' => $this->studyService->getAllStudies(),
+                'btn_label' => '',
+            ],
+            'experiences_section' => [
+                'id' => 'experiences',
+                'title' => __('homepage.experiences-section.title'),
+                'subtitle' => __('homepage.experiences-section.subtitle'),
+                'projects' => $this->experienceService->getAllExperiences(),
                 'btn_label' => '',
             ]
         ]);

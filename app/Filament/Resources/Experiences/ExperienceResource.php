@@ -7,6 +7,7 @@ use App\Filament\Resources\Experiences\Pages\EditExperience;
 use App\Filament\Resources\Experiences\Pages\ListExperiences;
 use App\Filament\Resources\Experiences\Schemas\ExperienceForm;
 use App\Filament\Resources\Experiences\Tables\ExperiencesTable;
+use App\Filament\Resources\Experiences\RelationManagers\TranslationsRelationManager;
 use App\Models\Experience;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -22,6 +23,16 @@ class ExperienceResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'company_name';
 
+    public static function getModelLabel(): string
+    {
+        return __('database.tables.experiences.singular');
+    }
+
+    public static function getModelPluralLabel(): string
+    {
+        return __('database.tables.experiences.plural');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return ExperienceForm::configure($schema);
@@ -35,7 +46,7 @@ class ExperienceResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            TranslationsRelationManager::class
         ];
     }
 

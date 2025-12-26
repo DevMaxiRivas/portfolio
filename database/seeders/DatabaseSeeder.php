@@ -17,10 +17,12 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UserSeeder::class);
         $this->call(LanguageSeeder::class);
-        $this->call(ProjectSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(TechnologySeeder::class);
+        $this->call(ProjectSeeder::class);
+        $this->call(ProjectTranslationSeeder::class);
         $this->call(StudySeeder::class);
         $this->call(StudyTranslationSeeder::class);
+        $this->call(ExperienceSeeder::class);
     }
 }

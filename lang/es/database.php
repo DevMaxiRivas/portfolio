@@ -12,7 +12,7 @@ return [
                 "image_paths" => "Imágenes",
             ],
         ],
-        "translation_projects" => [
+        "project_translations" => [
             "singular" => "Traducción de Proyecto",
             "plural" => "Traducciones de Proyecto",
             "columns" => [
@@ -35,7 +35,7 @@ return [
                 "updated_at" => "Actualizado en",
             ],
         ],
-        "translation_studies" => [
+        "study_translations" => [
             "singular" => "Traducción de Estudio",
             "plural" => "Traducciones de Estudio",
             "columns" => [
@@ -48,6 +48,29 @@ return [
                 "language" => "Idioma",
             ],
         ],
+        "experiences" => [
+            "singular" => "Experiencia",
+            "plural" => "Experiencias",
+            "columns" => [
+                "company_name" => "Nombre de la Compañía",
+                "position" => "Posición",
+                "start_date" => "Fecha de Inicio",
+                "end_date" => "Fecha de Finalización",
+                "is_visible" => "¿Visible?",
+                "created_at" => "Creado en",
+                "updated_at" => "Actualizado en",
+            ],
+        ],
+        "experience_translations" => [
+            "singular" => "Traducción de Experiencia",
+            "plural" => "Traducciones de Experiencia",
+            "columns" => [
+                "company_name" => "Nombre de la Compañía",
+                "position" => "Posición",
+                "description" => "Descripción",
+                "language" => "Idioma",
+            ],
+        ]
     ]
 
 ];

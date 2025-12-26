@@ -6,7 +6,7 @@ use App\Interfaces\StudyRepositoryInterface;
 use App\Repositories\StudyRepository;
 use Illuminate\Support\ServiceProvider;
 
-class StudyServiceProvider extends ServiceProvider
+class ExperienceServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.

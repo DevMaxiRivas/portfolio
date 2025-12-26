@@ -15,12 +15,15 @@ class ExperiencesTable
         return $table
             ->columns([
                 TextColumn::make('company_name')
+                    ->label(__('database.tables.experiences.columns.company_name'))
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('position')
+                    ->label(__('database.tables.experiences.columns.position'))
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('start_date')
+                    ->label(__('database.tables.experiences.columns.start_date'))
                     ->date()
                     ->sortable()
                     ->searchable(),

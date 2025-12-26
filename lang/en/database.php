@@ -12,7 +12,7 @@ return [
                 "access_link" => "Access Link",
             ],
         ],
-        "translation_projects" => [
+        "project_translations" => [
             "singular" => "Translation Project",
             "plural" => "Translation Projects",
             "columns" => [
@@ -51,7 +51,7 @@ return [
                 "location" => "Location",
             ]
         ],
-        "translation_studies" => [
+        "study_translations" => [
             "singular" => "Translation Study",
             "plural" => "Translation Studies",
             "columns" => [

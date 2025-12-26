@@ -31,7 +31,11 @@ return [
     ],
     "studies-section" => [
         "title" => "mis estudios",
-        "subtitle" => "algunos de mis estudios más recientes",
+        "subtitle" => "Más recientes",
+    ],
+    "experiences-section" => [
+        "title" => "mis experiencias",
+        "subtitle" => "Más recientes",
     ],
     "about_me-section" => [
         "title" => "sobre mí",

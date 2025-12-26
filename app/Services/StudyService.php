@@ -3,7 +3,7 @@
 namespace App\Services;
 
 use App\DTOs\StudyShowDTO;
-use App\Interfaces\Interfaces\StudyRepositoryInterface;
+use App\Interfaces\StudyRepositoryInterface;
 
 class StudyService
 {

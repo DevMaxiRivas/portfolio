@@ -13,30 +13,21 @@ class ExperienceForm
     {
         return [
             Forms\Components\TextInput::make('company_name')
+                ->label(__('database.tables.experiences.columns.company_name'))
                 ->required(),
             Forms\Components\TextInput::make('position')
+                ->label(__('database.tables.experiences.columns.position'))
                 ->required(),
             Forms\Components\DatePicker::make('start_date')
+                ->label(__('database.tables.experiences.columns.start_date'))
                 ->default(now()->format('Y-m-d'))
                 ->required(),
             Forms\Components\DatePicker::make('end_date')
+                ->label(__('database.tables.experiences.columns.end_date'))
                 ->default(now()->format('Y-m-d')),
-            Forms\Components\RichEditor::make('description')
-                ->columnSpanFull()
-                ->toolbarButtons([
-                    'blockquote',
-                    'bold',
-                    'bulletList',
-                    'h2',
-                    'h3',
-                    'italic',
-                    'link',
-                    'orderedList',
-                    'redo',
-                    'strike',
-                    'underline',
-                    'undo',
-                ]),
+            Forms\Components\Toggle::make('is_visible')
+                ->label(__('database.tables.experiences.columns.is_visible'))
+                ->default(true),
         ];
     }
     public static function configure(Schema $schema): Schema

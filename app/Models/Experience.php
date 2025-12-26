@@ -10,8 +10,13 @@ class Experience extends Model
     protected $fillable = [
         'company_name',
         'position',
+        'is_visible',
         'start_date',
         'end_date',
-        'description',
     ];
+
+    public function translations()
+    {
+        return $this->hasMany(ExperienceTranslation::class);
+    }
 }
