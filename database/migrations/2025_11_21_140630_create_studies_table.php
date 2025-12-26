@@ -17,10 +17,8 @@ return new class extends Migration
             $table->string('degree');
             $table->date('start_date');
             $table->date('end_date')->nullable();
-            $table->string('field_of_study')->nullable();
-            $table->text('description')->nullable();
+            $table->boolean('is_visible')->default(true);
             $table->string('certificate_link')->nullable();
-            $table->string('location')->nullable();
 
             $table->timestamps();
         });

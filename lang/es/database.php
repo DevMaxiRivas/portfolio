@@ -28,12 +28,10 @@ return [
             "columns" => [
                 "institution_name" => "Nombre de la Institución",
                 "degree" => "Título",
-                "field_of_study" => "Campo de Estudio",
-                "description" => "Descripción",
                 "certificate_link" => "Enlace al Certificado",
-                "location" => "Ubicación",
                 "start_date" => "Fecha de Inicio",
                 "end_date" => "Fecha de Finalización",
+                "is_visible" => "¿Visible?",
                 "created_at" => "Creado en",
                 "updated_at" => "Actualizado en",
             ],
@@ -48,6 +46,7 @@ return [
                 "description" => "Descripción",
                 "certificate_link" => "Enlace al Certificado",
                 "location" => "Ubicación",
+                "language" => "Idioma",
             ],
         ],
     ]

@@ -24,12 +24,6 @@ class StudiesTable
                     ->label(__('database.tables.studies.columns.start_date'))
                     ->date()
                     ->sortable(),
-                TextColumn::make('field_of_study')
-                    ->label(__('database.tables.studies.columns.field_of_study'))
-                    ->searchable(),
-                TextColumn::make('location')
-                    ->label(__('database.tables.studies.columns.location'))
-                    ->searchable(),
                 TextColumn::make('created_at')
                     ->label(__('database.tables.studies.columns.created_at'))
                     ->dateTime()

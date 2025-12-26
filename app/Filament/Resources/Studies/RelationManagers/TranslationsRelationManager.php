@@ -34,21 +34,25 @@ class TranslationsRelationManager extends RelationManager
         return $schema
             ->components([
                 TextInput::make('institution_name')
-                    ->label(__('database.tables.studies.columns.institution_name'))
+                    ->label(__('database.tables.translation_studies.columns.institution_name'))
                     ->required(),
                 TextInput::make('degree')
-                    ->label(__('database.tables.studies.columns.degree'))
+                    ->label(__('database.tables.translation_studies.columns.degree'))
+                    ->required(),
+                TextInput::make('field_of_study')
+                    ->label(__('database.tables.translation_studies.columns.field_of_study'))
                     ->required(),
                 Textarea::make('description')
-                    ->label(__('database.tables.studies.columns.description'))
+                    ->label(__('database.tables.translation_studies.columns.description'))
                     ->columnSpanFull()
                     ->default(null),
                 Select::make('language_id')
-                    ->label(__('database.tables.translation_projects.columns.language'))
-                    ->relationship('language', 'acronym')
+                    ->label(__('database.tables.translation_studies.columns.language'))
+                    ->relationship('language',)
+                    ->getOptionLabelFromRecordUsing(fn(Model $record) => strtoupper($record->acronym))
                     ->required(),
                 TextInput::make('location')
-                    ->label(__('database.tables.studies.columns.location'))
+                    ->label(__('database.tables.translation_studies.columns.location'))
                     ->default(null),
                 Hidden::make('study_id')
                     ->default(fn() => $this->ownerRecord->id),
@@ -62,6 +66,9 @@ class TranslationsRelationManager extends RelationManager
             ->columns([
                 TextColumn::make('institution_name')
                     ->label(__('database.tables.translation_studies.columns.institution_name'))
+                    ->searchable(),
+                TextColumn::make('language.name')
+                    ->label(__('database.tables.translation_studies.columns.language'))
                     ->searchable(),
             ])
             ->filters([

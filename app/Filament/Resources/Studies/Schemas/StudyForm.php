@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Studies\Schemas;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 
 class StudyForm
@@ -23,21 +24,14 @@ class StudyForm
                     ->label(__('database.tables.studies.columns.start_date'))
                     ->required(),
                 DatePicker::make('end_date')
-                    ->label(__('database.tables.studies.columns.end_date')),
-                TextInput::make('field_of_study')
-                    ->label(__('database.tables.studies.columns.field_of_study'))
-                    ->columnSpanFull()
-                    ->default(null),
-                Textarea::make('description')
-                    ->label(__('database.tables.studies.columns.description'))
-                    ->columnSpanFull()
+                    ->label(__('database.tables.studies.columns.end_date'))
                     ->default(null),
                 TextInput::make('certificate_link')
                     ->label(__('database.tables.studies.columns.certificate_link'))
                     ->default(null),
-                TextInput::make('location')
-                    ->label(__('database.tables.studies.columns.location'))
-                    ->default(null),
+                Toggle::make('is_visible')
+                    ->label(__('database.tables.studies.columns.is_visible'))
+                    ->default(true),
             ]);
     }
 }
