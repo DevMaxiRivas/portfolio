@@ -16,6 +16,7 @@ class ProjectShowDTO
         public ?string $link,
     ) {}
 
+
     public static function fromModel(Project $project): self
     {
         return new self(

@@ -14,16 +14,23 @@ class ProjectRepository implements ProjectRepositoryInterface
 
     public function getAllTranslatedProjects(): array
     {
-        return Project::all()->map(function ($project) {
-            return array_merge(
-                $project->toArray(),
-                [
-                    'translated_title' => $project->translated_title,
-                    'translated_description' => $project->translated_description,
-                    'images_urls' => $project->images_urls,
-                    'github_link' => $project->github_link,
-                ]
-            );
-        })->toArray();
+        return Project::join('project_translations', 'projects.id', '=', 'project_translations.project_id')  // Join con translations
+            ->join('languages', 'project_translations.language_id', '=', 'languages.id')  // Join con languages
+            ->where('languages.acronym', app()->getLocale())  // Filtra por acronym
+            ->select(
+                'project_translations.title as translated_title',
+                'project_translations.description as translated_description',
+                'projects.*'
+            )
+            ->get()
+            ->map(function ($project) {
+                return array_merge(
+                    $project->toArray(),
+                    [
+                        'images_urls' => $project->images_urls,
+                    ]
+                );
+            })
+            ->toArray();
     }
 }

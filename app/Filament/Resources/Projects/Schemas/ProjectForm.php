@@ -6,6 +6,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
 
@@ -17,18 +18,14 @@ class ProjectForm
             ->components([
                 TextInput::make('title')
                     ->label(__('database.tables.projects.columns.title'))
+                    ->columnSpanFull()
                     ->required(),
-                Select::make('language_id')
-                    ->label(__('database.tables.projects.columns.language'))
-                    ->relationship('language', 'name')
-                    ->required(),
-                Textarea::make('description')
-                    ->label(__('database.tables.projects.columns.description'))
-                    ->columnSpanFull(),
                 TextInput::make('github_link')
                     ->label(__('database.tables.projects.columns.github_link')),
                 TextInput::make('access_link')
                     ->label(__('database.tables.projects.columns.access_link')),
+                Toggle::make('is_visible')
+                    ->label(__('database.tables.projects.columns.is_visible')),
                 FileUpload::make('image_paths')
                     ->preserveFilenames()
                     ->label(__('database.tables.projects.columns.image_paths'))

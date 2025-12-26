@@ -16,6 +16,7 @@ class ProjectService
     }
     public function getAllProjects(): array
     {
+        // dd($this->repo->getAllTranslatedProjects());
         return array_map(
             fn($project) => ProjectShowDTO::fromArray($project)->toArray(),
             $this->repo->getAllTranslatedProjects()

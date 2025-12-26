@@ -16,10 +16,6 @@ class ProjectsTable
             ->columns([
                 TextColumn::make('title')
                     ->searchable(),
-                TextColumn::make('github_link')
-                    ->searchable(),
-                TextColumn::make('access_link')
-                    ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

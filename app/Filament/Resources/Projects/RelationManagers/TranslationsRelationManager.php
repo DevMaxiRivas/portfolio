@@ -12,12 +12,10 @@ use Filament\Actions\DissociateAction;
 use Filament\Actions\DissociateBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\Hidden;
-use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -44,6 +42,7 @@ class TranslationsRelationManager extends RelationManager
                 Select::make('language_id')
                     ->label(__('database.tables.translation_projects.columns.language'))
                     ->relationship('language', 'acronym')
+                    ->getOptionLabelFromRecordUsing(fn(Model $record) => strtoupper($record->acronym))
                     ->required(),
                 Hidden::make('project_id')
                     ->default(fn() => $this->ownerRecord->id),
@@ -62,6 +61,9 @@ class TranslationsRelationManager extends RelationManager
             ->columns([
                 TextColumn::make('title')
                     ->label(__('database.tables.translation_projects.columns.title'))
+                    ->searchable(),
+                TextColumn::make('language.name')
+                    ->label(__('database.tables.translation_projects.columns.language'))
                     ->searchable(),
             ])
             ->filters([

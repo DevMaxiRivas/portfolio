@@ -42,27 +42,6 @@ class Project extends Model
         return !empty($this->image_paths);
     }
 
-    public function getTranslatedTitleAttribute(): string
-    {
-        // dd(app()->getLocale());
-        return $this->translations()
-            ->join('languages', 'languages.id', '=', 'project_translations.language_id')
-            ->where('acronym', app()->getLocale())
-            ->first()->title ??
-            $this->title;
-    }
-
-    public function getTranslatedDescriptionAttribute(): string
-    {
-        // dd(app()->getLocale());
-        return $this->translations()
-            ->join('languages', 'languages.id', '=', 'project_translations.language_id')
-            ->where('acronym', app()->getLocale())
-            ->first()
-            ->description ??
-            $this->description;
-    }
-
     public function getImagesUrlsAttribute(): ?array
     {
         return !empty($this->image_paths) ? array_map(function ($path) {
