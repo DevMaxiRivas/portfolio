@@ -1,5 +1,5 @@
 <div class="col-md-6" data-aos="fade-up">
-    <div class="card-custom rounded-4 bg-base shadow-effect">
+    <div class="card-custom rounded-4 bg-base shadow-effect h-100">
         @if (!empty($images_urls))
             <div class="card-custom-image rounded-4">
                 <img class="rounded-4" src="{{ $images_urls[0] ?? '' }}" alt="{{ str_replace(' ', '-', $title) }}Image">

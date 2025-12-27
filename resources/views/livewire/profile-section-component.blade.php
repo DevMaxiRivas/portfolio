@@ -11,7 +11,7 @@
                 <div class="row gy-4">
 
                     <div class="col-md-4" data-aos="fade-up">
-                        <div class="service p-4 bg-base rounded-4 shadow-effect">
+                        <div class="service p-4 bg-base rounded-4 shadow-effect h-100">
                             <div class="iconbox rounded-4">
                                 <i class="las la-feather"></i>
                             </div>
@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="service p-4 bg-base rounded-4 shadow-effect">
+                        <div class="service p-4 bg-base rounded-4 shadow-effect h-100">
                             <div class="iconbox rounded-4">
                                 <i class="las la-pencil-ruler"></i>
                             </div>
@@ -37,7 +37,7 @@
                     </div>
 
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
-                        <div class="service p-4 bg-base rounded-4 shadow-effect">
+                        <div class="service p-4 bg-base rounded-4 shadow-effect h-100">
                             <div class="iconbox rounded-4">
                                 <i class="las la-laptop-code"></i>
                             </div>

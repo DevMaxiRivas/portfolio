@@ -20,16 +20,16 @@ class Navbar extends Component
                 "id" => "profiles"
             ],
             [
-                "name" => __("navbar.studies"),
-                "id" => "studies"
+                "name" => __("navbar.experiences"),
+                "id" => "experiences"
             ],
             [
                 "name" => __("navbar.projects"),
                 "id" => "projects"
             ],
             [
-                "name" => __("navbar.experiences"),
-                "id" => "experiences"
+                "name" => __("navbar.studies"),
+                "id" => "studies"
             ],
             [
                 "name" => __("navbar.contact"),
