@@ -9,7 +9,7 @@
                 </div>
 
                 @if (!empty($element_list))
-                    <livewire:list-cards-component :element_list="$element_list" :btn_label="$btn_label" />
+                    <livewire:list-cards-component :element_list="$element_list" :btn_label="$btn_label" :btn_see_tags="$btn_see_tags" />
                 @else
                     <div class="row gy-4">
                         <p>No cards to show</p>

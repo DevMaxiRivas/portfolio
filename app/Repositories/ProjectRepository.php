@@ -28,7 +28,7 @@ class ProjectRepository implements ProjectRepositoryInterface
                     $project->toArray(),
                     [
                         'images_urls' => $project->images_urls,
-                        'tags' => $project->technologies->pluck('name')->toArray()
+                        'technologies' => $project->technologies->pluck('name')->toArray()
                     ]
                 );
             })

@@ -13,8 +13,6 @@ class StudyShowDTO
         public string $title,
         public string $subtitle,
         public string $description,
-        public array $images_urls,
-        public ?string $link,
     ) {}
 
     private static function formatSubtitle(string $institution_name, Carbon $start_date, ?Carbon $end_date): string
@@ -34,8 +32,6 @@ class StudyShowDTO
                 end_date: $data['end_date'] ? Carbon::parse($data['end_date']) : null
             ),
             description: $data['description'],
-            images_urls: [],
-            link: ''
         );
     }
 
@@ -45,8 +41,6 @@ class StudyShowDTO
             "title" => $this->title,
             "subtitle" => $this->subtitle,
             "description" => $this->description,
-            "images_urls" => $this->images_urls,
-            "link" => $this->link,
 
         ];
     }

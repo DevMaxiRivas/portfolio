@@ -27,7 +27,8 @@ return [
     "projects-section" => [
         "title" => "mis proyectos",
         "subtitle" => "algunos de mis proyectos más recientes",
-        "btn-see_project" => "ver proyecto"
+        "btn-see_project" => "ver proyecto",
+        "btn-see_technologies" => "ver tecnologías"
     ],
     "studies-section" => [
         "title" => "mis estudios",

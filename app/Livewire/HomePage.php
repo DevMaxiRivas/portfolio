@@ -30,6 +30,7 @@ class HomePage extends Component
                 'subtitle' => __('homepage.projects-section.subtitle'),
                 'projects' => $this->projectService->getAllProjects(),
                 'btn_label' => __('homepage.projects-section.btn-see_project'),
+                'btn_see_tags' => __('homepage.projects-section.btn-see_technologies')
             ],
             'studies_section' => [
                 'id' => 'studies',

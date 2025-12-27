@@ -14,52 +14,6 @@ AOS.init({
 
 });
 
-// Clave de acceso para hacer uso de la API
-const apiKey = "LmyQcXpZUW63AcyylfcB8S8oCpcPC0cV2tKrabnI";
-
-// Encabezados que solicita la API con la clave 
-const headers = {
-  "Authorization": `Bearer ${apiKey}`,
-  "Content-Type": "application/json"
-};
-
-// CONSUMIR API
-// Función para obtener una cita aleatoria
-async function obtenerCitaAleatoria() {
-
-  // Usamos un proxy ya que la API tiene Problema de CORS (Cross-Origin Resource Sharing)
-  // puede estar configurado para permitir solicitudes desde este dominio.
-  const url = "https://quotes.rest/qod";
-  const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-
-  // Valores por defecto
-  let quote = 'Do not worry if you have built your castles in the air. They are where they should be. Now put the foundations under them.'
-  let author = 'Henry David Thoreau'
-
-  try {
-    // Fetch para consumir la API
-    const response = await fetch(proxyUrl + url, { headers: headers });
-    // const response = await fetch(url, { headers: headers });
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    // Si tenemos una respuesta de la API la convertimos en json
-    const data = await response.json();
-    if (data.contents && data.contents.quotes && data.contents.quotes.length > 0) {
-      quote = data.contents.quotes[0].quote;
-      author = data.contents.quotes[0].author;
-    } else {
-      console.log("The answer does not contain citations.");
-    }
-  } catch (error) {
-    console.log("Unable to obtain an appointment");
-  }
-  // Cargamos los valores a la página
-  $('#motivation-phrase').text(quote);
-  $('#motivation-phrase-author').text(author);
-
-}
-
 function validarEmail(email) {
   // Expresión regular para validar un email
   var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -173,6 +127,4 @@ $(document).ready(() => {
 
   });
 
-  // Cargar Cita Aleatoria
-  obtenerCitaAleatoria()
 });
