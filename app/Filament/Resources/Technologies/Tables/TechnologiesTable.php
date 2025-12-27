@@ -15,14 +15,18 @@ class TechnologiesTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label(__('database.tables.technologies.columns.name'))
                     ->searchable(),
                 TextColumn::make('proficiency_level')
+                    ->label(__('database.tables.technologies.columns.proficiency_level'))
                     ->searchable(),
                 TextColumn::make('created_at')
+                    ->label(__('database.tables.technologies.columns.created_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label(__('database.tables.technologies.columns.updated_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
