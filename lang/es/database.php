@@ -10,6 +10,8 @@ return [
                 "github_link" => "Enlace de GitHub",
                 "access_link" => "Enlace de Acceso",
                 "image_paths" => "Imágenes",
+                "created_at" => "Creado en",
+                "updated_at" => "Actualizado en",
             ],
         ],
         "project_translations" => [
@@ -19,6 +21,8 @@ return [
                 "title" => "Título",
                 "description" => "Descripción",
                 "language" => "Idioma",
+                "created_at" => "Creado en",
+                "updated_at" => "Actualizado en",
             ],
         ],
         "studies" => [
@@ -46,6 +50,8 @@ return [
                 "certificate_link" => "Enlace al Certificado",
                 "location" => "Ubicación",
                 "language" => "Idioma",
+                "created_at" => "Creado en",
+                "updated_at" => "Actualizado en",
             ],
         ],
         "experiences" => [
@@ -69,6 +75,8 @@ return [
                 "position" => "Posición",
                 "description" => "Descripción",
                 "language" => "Idioma",
+                "created_at" => "Creado en",
+                "updated_at" => "Actualizado en",
             ],
         ],
         "languages" => [
@@ -78,6 +86,8 @@ return [
                 "name" => "Nombre",
                 "acronym" => "Acronimo",
                 "proficiency_level" => "Nivel de Proficiencia",
+                "created_at" => "Creado en",
+                "updated_at" => "Actualizado en",
             ]
         ],
         "technologies" => [
@@ -86,6 +96,8 @@ return [
             "columns" => [
                 "name" => "Nombre",
                 "proficiency_level" => "Nivel de Proficiencia",
+                "created_at" => "Creado en",
+                "updated_at" => "Actualizado en",
             ]
         ]
     ],

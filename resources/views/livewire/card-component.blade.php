@@ -6,12 +6,14 @@
             </div>
         @endif
         <div class="card-custom-content p-4">
-            <h4>{{ $title }}</h4>
-            @if (!empty($subtitle))
-                <p class="text-brand mb-2">{{ $subtitle }}</p>
-            @endif
-            <p>{{ substr($description, 0, 150) . (strlen($description) > 150 ? '...' : '') }}
-            </p>
+            <div>
+                <h4>{{ $title }}</h4>
+                @if (!empty($subtitle))
+                    <p class="text-brand mb-2">{{ $subtitle }}</p>
+                @endif
+                <p>{{ substr($description, 0, 150) . (strlen($description) > 150 ? '...' : '') }}
+                </p>
+            </div>
             @if (!empty($link) || !empty($tags))
                 <div class="d-flex justify-content-between gap-2">
                     @if (!empty($link))

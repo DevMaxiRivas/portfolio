@@ -15,12 +15,15 @@ class ProjectsTable
         return $table
             ->columns([
                 TextColumn::make('title')
+                    ->label(__('database.tables.projects.columns.title'))
                     ->searchable(),
                 TextColumn::make('created_at')
+                    ->label(__('database.tables.projects.columns.created_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label(__('database.tables.projects.columns.updated_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

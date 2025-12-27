@@ -1,50 +1,51 @@
 <?php
 return [
     "home-section" => [
-        "title" => "i'm a system analyst from salta, argentina",
-        "subtitle" => "I'm Maximiliano Rivas, and i design high-performance technology solutions, tailored to specific user needs and focused on efficiency and optimization.",
+        "title" => "I am a systems analyst from Salta, Argentina",
+        "subtitle" => "I am Maximiliano Rivas, I design high-performance technological solutions, adapted to the specific needs of users, focused on efficiency and optimization.",
         "btn_explore_works" => "explore my work",
         "btn_contact_me" => "contact me"
     ],
     "profile-section" => [
         "title" => "profiles",
-        "subtitle" => "profiles in which i stand out",
+        "subtitle" => "profiles in which I stand out",
         "cards-profiles" => [
             "profile-1" => [
                 "title" => "web developer",
-                "description" => "I develop high-performance, scalable, and secure web applications using modern technologies and best practices."
+                "description" => "I develop high-performance, scalable and secure web applications using modern technologies and best practices."
             ],
             "profile-2" => [
-                "title" => "system analyst",
-                "description" => "I analyze, design, and optimize information systems to ensure they meet business needs and improve operational efficiency."
+                "title" => "systems analyst",
+                "description" => "I analyze, design and optimize information systems to ensure they meet business needs and improve operational efficiency."
             ],
             "profile-3" => [
                 "title" => "database administrator",
-                "description" => "I manage and maintain database systems to ensure data integrity, security, and optimal performance."
+                "description" => "I manage and maintain database systems to ensure data integrity, security and optimal performance."
             ]
         ]
     ],
     "projects-section" => [
         "title" => "my projects",
         "subtitle" => "some of my most recent projects",
-        "btn-see_project" => "see project"
+        "btn-see_project" => "see project",
+        "btn-see_technologies" => "see technologies"
     ],
     "studies-section" => [
         "title" => "my studies",
-        "subtitle" => "most recent",
+        "subtitle" => "Most recent",
     ],
     "experiences-section" => [
         "title" => "my experiences",
-        "subtitle" => "most recent",
+        "subtitle" => "Most recent",
     ],
     "about_me-section" => [
         "title" => "about me",
-        "subtitle" => "my study & experiance",
+        "subtitle" => "my education and experience",
         "experience-section" => [
             "title" => "experience",
         ],
         "study-section" => [
-            "title" => "study",
+            "title" => "education",
         ]
     ],
     "contact-section" => [
