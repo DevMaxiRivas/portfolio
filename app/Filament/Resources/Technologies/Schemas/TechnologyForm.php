@@ -18,6 +18,7 @@ class TechnologyForm
                     ->required(),
                 Select::make('proficiency_level')
                     ->label(__('database.tables.technologies.columns.proficiency_level'))
+                    ->required()
                     ->options(ProficiencyLevelTechnologyEnum::class),
                 Select::make('categories')
                     ->label(__('database.tables.technologies.columns.categories'))

@@ -12,7 +12,7 @@ class ProjectRepository implements ProjectRepositoryInterface
         return Project::all()->toArray();
     }
 
-    public function getAllTranslatedProjects(): array
+    public function getAllTranslatedProjects()
     {
         return Project::join('project_translations', 'projects.id', '=', 'project_translations.project_id')  // Join con translations
             ->join('languages', 'project_translations.language_id', '=', 'languages.id')  // Join con languages
@@ -22,16 +22,6 @@ class ProjectRepository implements ProjectRepositoryInterface
                 'project_translations.description as translated_description',
                 'projects.*'
             )
-            ->get()
-            ->map(function ($project) {
-                return array_merge(
-                    $project->toArray(),
-                    [
-                        'images_urls' => $project->images_urls,
-                        'technologies' => $project->technologies->pluck('name')->toArray()
-                    ]
-                );
-            })
-            ->toArray();
+            ->paginate(2);
     }
 }

@@ -28,7 +28,8 @@ class HomePage extends Component
                 'id' => 'projects',
                 'title' => __('homepage.projects-section.title'),
                 'subtitle' => __('homepage.projects-section.subtitle'),
-                'projects' => $this->projectService->getAllProjects(),
+                // 'projects' => $this->projectService->getAllProjects(),
+                'projects' => [],
                 'btn_label' => __('homepage.projects-section.btn-see_project'),
                 'btn_see_tags' => __('homepage.projects-section.btn-see_technologies')
             ],

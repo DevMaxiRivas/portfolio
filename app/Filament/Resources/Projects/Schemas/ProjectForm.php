@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Projects\Schemas;
 
+use App\Enums\ProficiencyLevelTechnologyEnum;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -33,10 +34,25 @@ class ProjectForm
                 //     ->multiple()
                 //     ->relationship('technologies'),
                 Select::make('technologies')
-                    ->multiple() // Allows selection of multiple options
-                    ->relationship(name: 'technologies', titleAttribute: 'name') // 'categories' is the relationship name, 'name' is the column to display
-                    ->preload() // Optionally loads all options initially for a better UX
-                    ->searchable(), // Optionally adds search functionality
+                    ->multiple()
+                    ->relationship(name: 'technologies', titleAttribute: 'name')
+                    ->preload()
+                    ->searchable()
+                    ->createOptionForm([
+                        TextInput::make('name')
+                            ->label(__('database.tables.technologies.columns.name'))
+                            ->required(),
+                        Select::make('proficiency_level')
+                            ->label(__('database.tables.technologies.columns.proficiency_level'))
+                            ->required()
+                            ->options(ProficiencyLevelTechnologyEnum::class),
+                        Select::make('categories')
+                            ->label(__('database.tables.technologies.columns.categories'))
+                            ->relationship('categories', 'name')
+                            ->multiple()
+                            ->preload()
+                            ->required()
+                    ]),
 
                 FileUpload::make('image_paths')
                     ->preserveFilenames()

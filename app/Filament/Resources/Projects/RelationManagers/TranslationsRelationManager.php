@@ -74,6 +74,7 @@ class TranslationsRelationManager extends RelationManager
                     ->default(fn() => $this->ownerRecord->id),
                 RichEditor::make('description')
                     ->label(__('database.tables.project_translations.columns.description'))
+                    ->columnSpanFull()
                     ->toolbarButtons([ // Optional: customize the toolbar
                         'blockquote',
                         'bold',
