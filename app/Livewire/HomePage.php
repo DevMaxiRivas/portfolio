@@ -24,6 +24,16 @@ class HomePage extends Component
     public function render()
     {
         return view('livewire.home-page', [
+            'welcome_section' => [
+                'title' => "Prueba Titulo",
+                'subtitle' => "Subtitulo de prueba",
+                'description' => "Descripción de prueba",
+                'images_urls' => [
+                    asset('images/homepage/welcome-image-1.jpg'),
+                    asset('images/homepage/welcome-image-2.jpg'),
+                    asset('images/homepage/welcome-image-3.jpg'),
+                ],
+            ],
             'projects_section' => [
                 'id' => 'projects',
                 'title' => __('homepage.projects-section.title'),

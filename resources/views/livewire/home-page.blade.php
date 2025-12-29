@@ -1,5 +1,15 @@
 <main id="content-wrapper">
     <livewire:home-section-component />
+    <section>
+        <div class="container">
+            <div class="row gy-4">
+                <livewire:card-with-carousel-component :data="$welcome_section" />
+                <livewire:card-with-carousel-component :data="$welcome_section" />
+                <livewire:card-with-carousel-component :data="$welcome_section" />
+                <livewire:card-with-carousel-component :data="$welcome_section" />
+            </div>
+        </div>
+    </section>
     <livewire:profile-section-component />
     <livewire:section-component :id="$experiences_section['id']" :title="$experiences_section['title']" :subtitle="$experiences_section['subtitle']" :element_list="$experiences_section['projects']"
         :btn_label="$experiences_section['btn_label']" />
