@@ -14,6 +14,7 @@ use Filament\Actions\DissociateAction;
 use Filament\Actions\DissociateBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\Hidden;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -71,11 +72,22 @@ class TranslationsRelationManager extends RelationManager
                     ->required(),
                 Hidden::make('project_id')
                     ->default(fn() => $this->ownerRecord->id),
-                Textarea::make('description')
+                RichEditor::make('description')
                     ->label(__('database.tables.project_translations.columns.description'))
-                    ->required()
-                    ->columnSpanFull()
-                    ->nullable(),
+                    ->toolbarButtons([ // Optional: customize the toolbar
+                        'blockquote',
+                        'bold',
+                        'bulletList',
+                        'h2',
+                        'h3',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'redo',
+                        'strike',
+                        'underline',
+                        'undo',
+                    ])
             ]);
     }
 

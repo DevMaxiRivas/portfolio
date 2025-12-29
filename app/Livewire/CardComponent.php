@@ -13,9 +13,8 @@ class CardComponent extends Component
     public string $description;
     public string $link;
     public string $btn_label;
-
+    public bool $full_width;
     public string $btn_see_tags;
-    const MAX_DESCRIPTION_LENGTH = 100;
 
     public function mount(
         string $title,
@@ -25,7 +24,8 @@ class CardComponent extends Component
         string $link = '',
         string $btn_label = '',
         string $btn_see_tags = '',
-        array $tags = []
+        array $tags = [],
+        bool $full_width = false
     ) {
         $this->title = $title;
         $this->subtitle = $subtitle;
@@ -35,6 +35,7 @@ class CardComponent extends Component
         $this->btn_label = $btn_label;
         $this->tags = $tags;
         $this->btn_see_tags = $btn_see_tags;
+        $this->full_width = $full_width;
     }
 
     public function render()

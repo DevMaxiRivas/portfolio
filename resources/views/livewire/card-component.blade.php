@@ -1,4 +1,4 @@
-<div class="col-md-6" data-aos="fade-up">
+<div class="col-md-{{ $full_width ? '12' : '6' }}" data-aos="fade-up">
     <div class="card-custom rounded-4 bg-base shadow-effect h-100">
         @if (!empty($images_urls))
             <div class="card-custom-image rounded-4">
@@ -11,7 +11,8 @@
                 @if (!empty($subtitle))
                     <p class="text-brand mb-2">{{ $subtitle }}</p>
                 @endif
-                <p>{{ substr($description, 0, 150) . (strlen($description) > 150 ? '...' : '') }}
+                <p>
+                    {!! str($description)->sanitizeHtml() !!}
                 </p>
             </div>
             @if (!empty($link) || !empty($tags))

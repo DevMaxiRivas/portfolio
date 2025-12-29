@@ -72,10 +72,25 @@ class TranslationsRelationManager extends RelationManager
                     )
                     ->hidden(fn(Get $get): bool => !empty($get('id')))
                     ->required(),
-                Textarea::make('description')
+                RichEditor::make('description')
                     ->label(__('database.tables.experience_translations.columns.description'))
+                    ->toolbarButtons([ // Optional: customize the toolbar
+                        'blockquote',
+                        'bold',
+                        'bulletList',
+                        'h2',
+                        'h3',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'redo',
+                        'strike',
+                        'underline',
+                        'undo',
+                    ])
+                    ->required()
                     ->columnSpanFull()
-                    ->required(),
+                    ->nullable(),
                 Hidden::make('experience_id')
                     ->default(fn() => $this->ownerRecord->id),
             ]);
