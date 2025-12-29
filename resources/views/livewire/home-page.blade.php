@@ -2,12 +2,7 @@
     <livewire:home-section-component />
     <section>
         <div class="container">
-            <div class="row gy-4">
-                <livewire:card-with-carousel-component :data="$welcome_section" />
-                <livewire:card-with-carousel-component :data="$welcome_section" />
-                <livewire:card-with-carousel-component :data="$welcome_section" />
-                <livewire:card-with-carousel-component :data="$welcome_section" />
-            </div>
+            <livewire:project-card-list-component />
         </div>
     </section>
     <livewire:profile-section-component />

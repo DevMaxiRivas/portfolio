@@ -1,24 +1,18 @@
-<div class="container" wire:ignore>
+<div class="card-custom-image rounded-4" wire:ignore>
     <div id="carouselHeader{{ $id }}" class="carousel slide">
         <div class="carousel-indicators">
-            <button type="button" wire:click="$js.goToSlide(0)" data-bs-slide-to="0" class="active"></button>
-            <button type="button" wire:click="$js.goToSlide(1)" data-bs-slide-to="1"></button>
-            <button type="button" wire:click="$js.goToSlide(2)" data-bs-slide-to="2"></button>
+            @for ($i = 0; $i < count($images_urls); $i++)
+                <button type="button" wire:click="$js.goToSlide({{ $i }})"
+                    data-bs-slide-to="{{ $i }}" class="{{ $i === 0 ? 'active' : '' }}"></button>
+            @endfor
         </div>
 
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop"
-                    class="d-block w-100" alt="Montaña">
-            </div>
-            <div class="carousel-item">
-                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=400&fit=crop"
-                    class="d-block w-100" alt="Naturaleza">
-            </div>
-            <div class="carousel-item">
-                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=400&fit=crop"
-                    class="d-block w-100" alt="Bosque">
-            </div>
+            @foreach ($images_urls as $image)
+                <div class="carousel-item active">
+                    <img src="{{ $image }}" class="rounded-4 d-block w-100" alt="Imagen de Proyecto">
+                </div>
+            @endforeach
         </div>
 
         <button class="carousel-control-prev" type="button" wire:click="$js.slideCarousel('prev')">
