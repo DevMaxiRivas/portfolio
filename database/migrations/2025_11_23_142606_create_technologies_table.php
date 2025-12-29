@@ -22,8 +22,6 @@ return new class extends Migration
             ])
                 ->default('beginner');;
             $table->timestamps();
-
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
         });
     }
 

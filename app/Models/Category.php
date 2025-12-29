@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $fillable = ['name'];
+
+    public function technologies()
+    {
+        return $this->belongsToMany(Technology::class);
+    }
 }

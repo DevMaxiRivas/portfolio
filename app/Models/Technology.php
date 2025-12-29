@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Technology extends Model
 {
     protected $fillable = [
+        "id",
         "name",
+        "category_id",
         "proficiency_level",
     ];
 
@@ -19,5 +21,9 @@ class Technology extends Model
     public function projects()
     {
         return $this->belongsToMany(Project::class);
+    }
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
     }
 }

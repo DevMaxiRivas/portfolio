@@ -14,11 +14,15 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         Category::insert([
-            ['name' => 'Web Development'],
+            ['name' => 'Backend Development'],
+            ['name' => 'Frontend Development'],
             ['name' => 'Mobile Development'],
             ['name' => 'Data Science'],
             ['name' => 'Machine Learning'],
             ['name' => 'DevOps'],
+            ['name' => 'Database Management'],
+            ['name' => 'Version Control'],
+            ['name' => 'Containerization'],
         ]);
     }
 }

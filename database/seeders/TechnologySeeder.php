@@ -15,15 +15,15 @@ class TechnologySeeder extends Seeder
     {
         Technology::insert(
             [
-                ['category_id' => 1, 'name' => 'PHP', 'proficiency_level' => 'intermediate'],
-                ['category_id' => 1, 'name' => 'JavaScript', 'proficiency_level' => 'intermediate'],
-                ['category_id' => 1, 'name' => 'Laravel', 'proficiency_level' => 'intermediate'],
-                ['category_id' => 1, 'name' => 'MySQL', 'proficiency_level' => 'intermediate'],
-                ['category_id' => 1, 'name' => 'Git', 'proficiency_level' => 'intermediate'],
-                ['category_id' => 1, 'name' => 'Docker', 'proficiency_level' => 'Intermediate'],
-                ['category_id' => 1, 'name' => 'HTML5', 'proficiency_level' => 'intermediate'],
-                ['category_id' => 1, 'name' => 'CSS3', 'proficiency_level' => 'intermediate'],
-                ['category_id' => 1, 'name' => 'Python', 'proficiency_level' => 'intermediate'],
+                ['name' => 'PHP', 'proficiency_level' => 'intermediate'],
+                ['name' => 'JavaScript', 'proficiency_level' => 'intermediate'],
+                ['name' => 'Laravel', 'proficiency_level' => 'intermediate'],
+                ['name' => 'MySQL', 'proficiency_level' => 'intermediate'],
+                ['name' => 'Git', 'proficiency_level' => 'intermediate'],
+                ['name' => 'Docker', 'proficiency_level' => 'Intermediate'],
+                ['name' => 'HTML5', 'proficiency_level' => 'intermediate'],
+                ['name' => 'CSS3', 'proficiency_level' => 'intermediate'],
+                ['name' => 'Python', 'proficiency_level' => 'intermediate'],
             ]
         );
     }

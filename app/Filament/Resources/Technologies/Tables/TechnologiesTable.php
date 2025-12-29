@@ -20,6 +20,9 @@ class TechnologiesTable
                 TextColumn::make('proficiency_level')
                     ->label(__('database.tables.technologies.columns.proficiency_level'))
                     ->searchable(),
+                TextColumn::make('categories.name')
+                    ->label(__('database.tables.technologies.columns.categories'))
+                    ->badge(),
                 TextColumn::make('created_at')
                     ->label(__('database.tables.technologies.columns.created_at'))
                     ->dateTime()

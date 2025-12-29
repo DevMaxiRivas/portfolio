@@ -16,4 +16,9 @@ class EditTechnology extends EditRecord
             DeleteAction::make(),
         ];
     }
+
+    public function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

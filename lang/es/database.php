@@ -96,10 +96,20 @@ return [
             "columns" => [
                 "name" => "Nombre",
                 "proficiency_level" => "Nivel de Proficiencia",
+                "categories" => "Categorías",
                 "created_at" => "Creado en",
                 "updated_at" => "Actualizado en",
             ]
-        ]
+        ],
+        "categories" => [
+            "singular" => "Categoría",
+            "plural" => "Categorías",
+            "columns" => [
+                "name" => "Nombre",
+                "created_at" => "Creado en",
+                "updated_at" => "Actualizado en",
+            ],
+        ],
     ],
     "enums" => [
         "tables" => [
