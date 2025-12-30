@@ -11,7 +11,6 @@ class StudyTranslation extends Model
         'degree',
         'field_of_study',
         'description',
-        'certificate_link',
         'location',
         'study_id',
         'language_id',

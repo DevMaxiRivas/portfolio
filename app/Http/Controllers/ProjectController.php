@@ -16,6 +16,6 @@ class ProjectController extends Controller
 
     public function index()
     {
-        return $this->service->getAllProjectsTranslated();
+        return $this->service->getProjectsTranslated();
     }
 }

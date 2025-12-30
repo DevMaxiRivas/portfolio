@@ -12,7 +12,7 @@ class ProjectRepository implements ProjectRepositoryInterface
         return Project::all()->toArray();
     }
 
-    public function getAllTranslatedProjects()
+    public function getTranslatedProjects()
     {
         return Project::join('project_translations', 'projects.id', '=', 'project_translations.project_id')  // Join con translations
             ->join('languages', 'project_translations.language_id', '=', 'languages.id')  // Join con languages

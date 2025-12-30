@@ -2,7 +2,8 @@
 
 namespace App\Services;
 
-use App\DTOs\StudyShowDTO;
+use App\DTOs\StudyShowCardDTO;
+use App\Http\Resources\StudyCollection;
 use App\Interfaces\StudyRepositoryInterface;
 
 class StudyService
@@ -13,12 +14,8 @@ class StudyService
         $this->repo = $repo;
     }
 
-    public function getAllStudies(): array
+    public function getStudies(): StudyCollection
     {
-        // dd($this->repo->getAllTranslatedStudies());
-        return array_map(
-            fn($project) => StudyShowDTO::fromArray($project)->toArray(),
-            $this->repo->getAllTranslatedStudies()
-        );
+        return new StudyCollection($this->repo->getStudiesTranslated());
     }
 }

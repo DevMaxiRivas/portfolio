@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\DTOs\ProjectShowDTO;
+use App\DTOs\ProjectShowCardDTO;
 use App\Http\Resources\ProjectCollection;
 use App\Http\Resources\ProjectResource;
 use App\Interfaces\ProjectRepositoryInterface;
@@ -16,18 +16,11 @@ class ProjectService
     {
         $this->repo = $repo;
     }
-    public function getAllProjects(): array
-    {
-        return array_map(
-            fn($project) => ProjectShowDTO::fromArray($project)->toArray(),
-            $this->repo->getAllTranslatedProjects()
-        );
-    }
 
-    public function getAllProjectsTranslated()
+    public function getProjectsTranslated()
     {
         return new ProjectCollection(
-            $this->repo->getAllTranslatedProjects()
+            $this->repo->getTranslatedProjects()
         );
     }
 }

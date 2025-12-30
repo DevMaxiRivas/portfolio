@@ -13,7 +13,7 @@ class ExperienceRepository implements ExperienceRepositoryInterface
         return Experience::all()->toArray();
     }
 
-    public function getAllTranslated()
+    public function getExperiencesTranslated()
     {
         return Experience::join('experience_translations', 'experiences.id', '=', 'experience_translations.experience_id')  // Join con translations
             ->join('languages', 'experience_translations.language_id', '=', 'languages.id')  // Join con languages

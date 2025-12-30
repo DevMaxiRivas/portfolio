@@ -16,7 +16,7 @@ class ExperienceService
     public function getExperiences(): ExperienceCollection
     {
         return new ExperienceCollection(
-            $this->repo->getAllTranslated()
+            $this->repo->getExperiencesTranslated()
         );
     }
 }

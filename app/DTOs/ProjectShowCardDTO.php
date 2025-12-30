@@ -2,7 +2,7 @@
 
 namespace App\DTOs;
 
-class ProjectShowDTO
+class ProjectShowCardDTO
 {
     /**
      * Create a new class instance.

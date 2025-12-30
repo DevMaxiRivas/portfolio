@@ -2,8 +2,9 @@
 
 namespace App\Livewire;
 
-use App\DTOs\ExperienceShowDTO;
-use App\DTOs\ProjectShowDTO;
+use App\DTOs\ExperienceShowCardDTO;
+use App\DTOs\ProjectShowCardDTO;
+use App\DTOs\StudyShowCardDTO;
 use App\Services\ExperienceService;
 use App\Services\ProjectService;
 use App\Services\StudyService;
@@ -11,17 +12,6 @@ use Livewire\Component;
 
 class HomePage extends Component
 {
-    protected final ProjectService $projectService;
-    protected final StudyService $studyService;
-    protected final ExperienceService $experienceService;
-
-    public function mount(ProjectService $projectService, StudyService $studyService, ExperienceService $experienceService)
-    {
-        $this->projectService = $projectService;
-        $this->studyService = $studyService;
-        $this->experienceService = $experienceService;
-    }
-
     public function render()
     {
         return view('livewire.home-page', [
@@ -32,7 +22,7 @@ class HomePage extends Component
                 'data_list' => [
                     'id' => 'project_card_list',
                     'url_resource' => route('api.projects'),
-                    'dto' => ProjectShowDTO::class,
+                    'dto' => ProjectShowCardDTO::class,
                     'btn_label' => __('homepage.projects-section.btn-see_project'),
                     'btn_see_tags_label' => __('homepage.projects-section.btn-see_technologies')
                 ]
@@ -41,17 +31,22 @@ class HomePage extends Component
                 'id' => 'studies',
                 'title' => __('homepage.studies-section.title'),
                 'subtitle' => __('homepage.studies-section.subtitle'),
-                'projects' => $this->studyService->getAllStudies(),
-                'btn_label' => '',
+                'data_list' => [
+                    'id' => 'studies_card_list',
+                    'url_resource' => route('api.studies'),
+                    'dto' => StudyShowCardDTO::class,
+                    'btn_label' => __('homepage.projects-section.btn-see_project'),
+                    'btn_see_tags_label' => __('homepage.projects-section.btn-see_technologies')
+                ]
             ],
             'experiences_section' => [
                 'id' => 'experiences',
                 'title' => __('homepage.experiences-section.title'),
                 'subtitle' => __('homepage.experiences-section.subtitle'),
                 'data_list' => [
-                    'id' => 'project_card_list',
+                    'id' => 'experiences_card_list',
                     'url_resource' => route('api.experiences'),
-                    'dto' => ExperienceShowDTO::class,
+                    'dto' => ExperienceShowCardDTO::class,
                     'btn_label' => __('homepage.projects-section.btn-see_project'),
                     'btn_see_tags_label' => __('homepage.projects-section.btn-see_technologies')
                 ]
