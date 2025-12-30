@@ -26,4 +26,9 @@ class Experience extends Model
     {
         return $this->belongsToMany(Technology::class);
     }
+
+    public function getTechnologiesTagsAttribute(): array
+    {
+        return !empty($this->technologies) ? $this->technologies->pluck('name')->toArray() : [];
+    }
 }

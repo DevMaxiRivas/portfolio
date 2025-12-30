@@ -37,6 +37,8 @@ return [
     "experiences-section" => [
         "title" => "my experiences",
         "subtitle" => "Most recent",
+        "btn-see_project" => "see more",
+        "btn-see_technologies" => "technologies used"
     ],
     "about_me-section" => [
         "title" => "about me",

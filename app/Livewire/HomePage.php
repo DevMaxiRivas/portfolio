@@ -47,8 +47,8 @@ class HomePage extends Component
                     'id' => 'experiences_card_list',
                     'url_resource' => route('api.experiences'),
                     'dto' => ExperienceShowCardDTO::class,
-                    'btn_label' => __('homepage.projects-section.btn-see_project'),
-                    'btn_see_tags_label' => __('homepage.projects-section.btn-see_technologies')
+                    'btn_label' => __('homepage.experiences-section.btn-see_project'),
+                    'btn_see_tags_label' => __('homepage.experiences-section.btn-see_technologies')
                 ]
             ],
         ]);

@@ -14,6 +14,7 @@ class ExperienceShowCardDTO
         public string $title,
         public string $subtitle,
         public string $description,
+        public array $tags,
     ) {}
 
     private static function formatSubtitle(string $company_name, Carbon $start_date, ?Carbon $end_date): string
@@ -34,6 +35,7 @@ class ExperienceShowCardDTO
                 end_date: $data['end_date'] ? Carbon::parse($data['end_date']) : null
             ),
             description: $data['description'],
+            tags: $data['technologies'],
         );
     }
 
@@ -44,6 +46,7 @@ class ExperienceShowCardDTO
             "title" => $this->title,
             "subtitle" => $this->subtitle,
             "description" => $this->description,
+            "tags" => $this->tags,
         ];
     }
 }

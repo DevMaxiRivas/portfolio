@@ -21,6 +21,7 @@ class ExperienceResource extends JsonResource
             'description' => $this->description,
             'start_date' => $this->start_date,
             'end_date' => $this->end_date,
+            'technologies' => $this->technologies_tags,
         ];
     }
 }

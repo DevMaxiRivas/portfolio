@@ -37,6 +37,8 @@ return [
     "experiences-section" => [
         "title" => "mis experiencias",
         "subtitle" => "Más recientes",
+        "btn-see_project" => "saber más",
+        "btn-see_technologies" => "tecnologías usadas"
     ],
     "about_me-section" => [
         "title" => "sobre mí",
