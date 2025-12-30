@@ -22,6 +22,6 @@ class ProjectRepository implements ProjectRepositoryInterface
                 'project_translations.description as translated_description',
                 'projects.*'
             )
-            ->paginate(2);
+            ->paginate(4);
     }
 }

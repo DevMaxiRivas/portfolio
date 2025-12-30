@@ -24,6 +24,10 @@ class HomePage extends Component
     public function render()
     {
         return view('livewire.home-page', [
+            'projects_section' => [
+                'project_list_id' => 'project_card_list_' . uniqid(),
+                'project_list_url' => route('api.projects'),
+            ],
             'welcome_section' => [
                 'title' => "Prueba Titulo",
                 'subtitle' => "Subtitulo de prueba",
@@ -33,15 +37,6 @@ class HomePage extends Component
                     asset('images/homepage/welcome-image-2.jpg'),
                     asset('images/homepage/welcome-image-3.jpg'),
                 ],
-            ],
-            'projects_section' => [
-                'id' => 'projects',
-                'title' => __('homepage.projects-section.title'),
-                'subtitle' => __('homepage.projects-section.subtitle'),
-                // 'projects' => $this->projectService->getAllProjects(),
-                'projects' => [],
-                'btn_label' => __('homepage.projects-section.btn-see_project'),
-                'btn_see_tags' => __('homepage.projects-section.btn-see_technologies')
             ],
             'studies_section' => [
                 'id' => 'studies',

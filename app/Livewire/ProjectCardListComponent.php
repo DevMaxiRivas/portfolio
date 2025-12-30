@@ -8,14 +8,17 @@ use Illuminate\Support\Facades\Log;
 
 class ProjectCardListComponent extends Component
 {
+    public string $id;
+    public string $url_resource;
     public array $list = [];
     public int $size_list = 0;
     public $currentPage = 1;
     public $lastPage = 1;
-    public bool $isLoading = true;
 
-    public function mount()
+    public function mount(string $id, string $url_resource)
     {
+        $this->id = $id;
+        $this->url_resource = $url_resource;
         $this->fetchData();
     }
     public function render()
@@ -26,22 +29,17 @@ class ProjectCardListComponent extends Component
     public function fetchData()
     {
         try {
-            Log::info('Fetching projects for page: ' . $this->currentPage);
-            $response = Http::get(route('api.projects') . '?page=' . $this->currentPage);
+            $response = Http::get($this->url_resource . '?page=' . $this->currentPage);
 
             if ($response->successful()) {
-                // dd($response->json());
-                Log::info($response->json());
                 $data = $response->json();
                 $this->list = $data['data'];
                 $this->size_list = count($this->list);
                 $this->currentPage = $data['meta']['current_page'];
                 $this->lastPage = $data['meta']['last_page'];
-                $this->isLoading = false;
             } else {
                 Log::info('Failed to fetch projects: ' . $response->status());
             }
-            $this->isLoading = false;
         } catch (\Throwable $th) {
             Log::error($th->getMessage());
         }

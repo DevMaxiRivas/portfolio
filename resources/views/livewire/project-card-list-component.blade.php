@@ -1,19 +1,33 @@
-<div class="container">
-    <div class="row gy-4">
-        @for ($i = 0; $i < $size_list; $i++)
-            @if ($size_list % 2 != 0 && $i == $size_list - 1)
-                @php $full_width = true;@endphp
-            @endif
-            <livewire:card-with-carousel-component :data="$list[$i]" :full_width="$full_width ?? false" />
-        @endfor
+<div class="container" id="{{ $id }}">
+    <div class="position-relative">
+        <div class="row gy-4">
+            @foreach ($list as $index => $project)
+                @php $full_width = (count($list) % 2 != 0 && $index == count($list) - 1) @endphp
+                <livewire:card-with-carousel-component :data="$project" :full_width="$full_width"
+                    wire:key="project-{{ $project['id'] }}" />
+            @endforeach
+        </div>
+        <!-- Spinner overlay durante la carga -->
+        <div wire:loading.class.remove="d-none"
+            class="d-none position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-light bg-opacity-75">
+            <div class="spinner-border text-brand" role="status">
+                <span
+                    class="visually-hidden">{{ __('livewire-components.project-card-list-component.loading') }}...</span>
+            </div>
+        </div>
     </div>
-    <div class="mt-4 container d-flex justify-content-center" data-aos="fade-up">
-        <nav aria-label="Page navigation">
-            <ul class="pagination">
-                <li class="page-item"><button class="page-link" href="#" wire:click="previousPage">Previous</button>
-                </li>
-                <li class="page-item"><button class="page-link" href="#" wire:click="nextPage">Next</button></li>
-            </ul>
-        </nav>
+    <div class="container d-flex justify-content-center gap-2 mt-4" data-aos="fade-up">
+        <a href="#{{ $id }}" class="btn btn-brand text-capitalize link-custom btn_see"
+            wire:click="previousPage" wire:loading.attr="disabled" wire:loading.class="opacity-50">
+            <span wire:loading.remove>{{ __('livewire-components.project-card-list-component.previous') }}</span>
+            <span wire:loading>{{ __('livewire-components.project-card-list-component.loading') }}...</span>
+        </a>
+        </li>
+        <li class="page-item">
+            <a href="#{{ $id }}" class="btn btn-brand text-capitalize link-custom btn_see"
+                wire:click="nextPage" wire:loading.attr="disabled" wire:loading.class="opacity-50">
+                <span wire:loading.remove>{{ __('livewire-components.project-card-list-component.next') }}</span>
+                <span wire:loading>{{ __('livewire-components.project-card-list-component.loading') }}...</span>
+            </a>
     </div>
 </div>
