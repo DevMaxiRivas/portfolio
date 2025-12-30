@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\DTOs\ExperienceShowDTO;
+use App\Http\Resources\ExperienceCollection;
 use App\Interfaces\ExperienceRepositoryInterface;
 
 class ExperienceService
@@ -13,11 +13,9 @@ class ExperienceService
         $this->repo = $repo;
     }
 
-    public function getAllExperiences(): array
+    public function getExperiences(): ExperienceCollection
     {
-        // dd($this->repo->getAllTranslatedStudies());
-        return array_map(
-            fn($project) => ExperienceShowDTO::fromArray($project)->toArray(),
+        return new ExperienceCollection(
             $this->repo->getAllTranslated()
         );
     }
