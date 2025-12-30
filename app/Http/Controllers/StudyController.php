@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\StudyService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class StudyController extends Controller
 {
@@ -16,6 +17,7 @@ class StudyController extends Controller
 
     public function index(Request $request)
     {
+        Log::info(app()->getLocale());
         return $this->service->getStudies();
     }
 }

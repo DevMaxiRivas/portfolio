@@ -8,12 +8,14 @@ use App\DTOs\StudyShowCardDTO;
 use App\Services\ExperienceService;
 use App\Services\ProjectService;
 use App\Services\StudyService;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 class HomePage extends Component
 {
     public function render()
     {
+        Log::info(app()->getLocale());
         return view('livewire.home-page', [
             'projects_section' => [
                 'id' => 'projects',
