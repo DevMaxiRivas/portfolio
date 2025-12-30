@@ -10,6 +10,7 @@ class ExperienceShowDTO
      * Create a new class instance.
      */
     public function __construct(
+        public int $id,
         public string $title,
         public string $subtitle,
         public string $description,
@@ -25,6 +26,7 @@ class ExperienceShowDTO
     public static function fromArray(array $data): self
     {
         return new self(
+            id: $data['id'],
             title: $data['position'],
             subtitle: self::formatSubtitle(
                 company_name: $data['company_name'],
@@ -38,6 +40,7 @@ class ExperienceShowDTO
     public function toArray(): array
     {
         return [
+            "id" => $this->id,
             "title" => $this->title,
             "subtitle" => $this->subtitle,
             "description" => $this->description,

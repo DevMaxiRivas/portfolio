@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\DTOs\ExperienceShowDTO;
 use App\DTOs\ProjectShowDTO;
 use App\Services\ExperienceService;
 use App\Services\ProjectService;
@@ -47,9 +48,14 @@ class HomePage extends Component
                 'id' => 'experiences',
                 'title' => __('homepage.experiences-section.title'),
                 'subtitle' => __('homepage.experiences-section.subtitle'),
-                'projects' => $this->experienceService->getAllExperiences(),
-                'btn_label' => '',
-            ]
+                'data_list' => [
+                    'id' => 'project_card_list',
+                    'url_resource' => route('api.experiences'),
+                    'dto' => ExperienceShowDTO::class,
+                    'btn_label' => __('homepage.projects-section.btn-see_project'),
+                    'btn_see_tags_label' => __('homepage.projects-section.btn-see_technologies')
+                ]
+            ],
         ]);
     }
 }
