@@ -26,4 +26,9 @@ class Technology extends Model
     {
         return $this->belongsToMany(Category::class);
     }
+
+    public function experiences()
+    {
+        return $this->belongsToMany(Experience::class);
+    }
 }

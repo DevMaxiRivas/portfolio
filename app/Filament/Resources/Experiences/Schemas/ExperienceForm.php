@@ -28,6 +28,12 @@ class ExperienceForm
             Forms\Components\Toggle::make('is_visible')
                 ->label(__('database.tables.experiences.columns.is_visible'))
                 ->default(true),
+            Forms\Components\Select::make('technologies')
+                ->label(__('database.tables.experiences.columns.technologies'))
+                ->multiple()
+                ->preload()
+                ->relationship('technologies', 'name')
+                ->required()
         ];
     }
     public static function configure(Schema $schema): Schema

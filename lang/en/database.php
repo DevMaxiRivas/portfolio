@@ -63,6 +63,7 @@ return [
                 "start_date" => "Start Date",
                 "end_date" => "End Date",
                 "is_visible" => "Visible?",
+                "technologies" => "Technologies",
                 "created_at" => "Created At",
                 "updated_at" => "Updated At",
             ],

@@ -21,4 +21,9 @@ class Experience extends Model
     {
         return $this->hasMany(ExperienceTranslation::class);
     }
+
+    public function technologies()
+    {
+        return $this->belongsToMany(Technology::class);
+    }
 }
