@@ -1,10 +1,10 @@
 <div class="container" id="{{ $id }}">
     <div class="position-relative">
         <div class="row gy-4">
-            @foreach ($list as $index => $project)
-                @php $full_width = (count($list) % 2 != 0 && $index == count($list) - 1) @endphp
-                <livewire:card-with-carousel-component :data="$project" :full_width="$full_width"
-                    wire:key="project-{{ $project['id'] }}" />
+            @foreach ($list as $index => $element_list)
+                @php $full_width = (count($list) % 2 != 0 && $index == count($list) - 1) ? true : false @endphp
+                <livewire:card-with-carousel-component :data="$element_list" :full_width="$full_width" :btn_see_tags_label="$btn_see_tags_label"
+                    :btn_label="$btn_label" wire:key="{{ $id }}-{{ $element_list['id'] }}" />
             @endforeach
         </div>
         <!-- Spinner overlay durante la carga -->

@@ -17,9 +17,11 @@ class ProjectResource extends JsonResource
         // dd($this);
         return [
             'id' => $this->id,
-            'title' => $this->translated_title,
-            'description' => $this->translated_description,
+            'translated_title' => $this->translated_title,
+            'translated_description' => $this->translated_description,
             'images_urls' => $this->images_urls,
+            'technologies' => $this->technologies_tags,
+            'github_link' => $this->github_link,
         ];
     }
 }

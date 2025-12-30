@@ -10,15 +10,21 @@ class ProjectCardListComponent extends Component
 {
     public string $id;
     public string $url_resource;
+    public string $dto;
+    public string $btn_label;
+    public string $btn_see_tags_label;
     public array $list = [];
     public int $size_list = 0;
     public $currentPage = 1;
     public $lastPage = 1;
 
-    public function mount(string $id, string $url_resource)
+    public function mount(array $data)
     {
-        $this->id = $id;
-        $this->url_resource = $url_resource;
+        $this->id = $data['id'];
+        $this->url_resource = $data['url_resource'];
+        $this->dto = $data['dto'];
+        $this->btn_label = $data['btn_label'];
+        $this->btn_see_tags_label = $data['btn_see_tags_label'];
         $this->fetchData();
     }
     public function render()
@@ -33,7 +39,8 @@ class ProjectCardListComponent extends Component
 
             if ($response->successful()) {
                 $data = $response->json();
-                $this->list = $data['data'];
+
+                $this->list = self::adjustData($data['data']);
                 $this->size_list = count($this->list);
                 $this->currentPage = $data['meta']['current_page'];
                 $this->lastPage = $data['meta']['last_page'];
@@ -43,6 +50,13 @@ class ProjectCardListComponent extends Component
         } catch (\Throwable $th) {
             Log::error($th->getMessage());
         }
+    }
+
+    protected function adjustData(array $data): array
+    {
+        return array_map(function ($item) {
+            return $this->dto::fromArray($item)->toArray();
+        }, $data);
     }
 
     public function nextPage()

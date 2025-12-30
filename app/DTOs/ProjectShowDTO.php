@@ -8,6 +8,7 @@ class ProjectShowDTO
      * Create a new class instance.
      */
     public function __construct(
+        private int $id,
         public string $title,
         public string $description,
         public array $images_urls,
@@ -15,9 +16,11 @@ class ProjectShowDTO
         public array $tags
     ) {}
 
+
     public static function fromArray(array $data): self
     {
         return new self(
+            id: $data["id"],
             title: $data['translated_title'],
             description: $data['translated_description'],
             images_urls: $data['images_urls'] ?? [],
@@ -29,6 +32,7 @@ class ProjectShowDTO
     public function toArray(): array
     {
         return [
+            'id' => $this->id,
             "title" => $this->title,
             "subtitle" => "",
             "description" => $this->description,

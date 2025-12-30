@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use App\Models\Experience;
+use App\DTOs\ProjectShowDTO;
 use App\Services\ExperienceService;
 use App\Services\ProjectService;
 use App\Services\StudyService;
@@ -25,18 +25,16 @@ class HomePage extends Component
     {
         return view('livewire.home-page', [
             'projects_section' => [
-                'project_list_id' => 'project_card_list_' . uniqid(),
-                'project_list_url' => route('api.projects'),
-            ],
-            'welcome_section' => [
-                'title' => "Prueba Titulo",
-                'subtitle' => "Subtitulo de prueba",
-                'description' => "Descripción de prueba",
-                'images_urls' => [
-                    asset('images/homepage/welcome-image-1.jpg'),
-                    asset('images/homepage/welcome-image-2.jpg'),
-                    asset('images/homepage/welcome-image-3.jpg'),
-                ],
+                'id' => 'projects',
+                'title' => __('homepage.projects-section.title'),
+                'subtitle' => __('homepage.projects-section.subtitle'),
+                'data_list' => [
+                    'id' => 'project_card_list',
+                    'url_resource' => route('api.projects'),
+                    'dto' => ProjectShowDTO::class,
+                    'btn_label' => __('homepage.projects-section.btn-see_project'),
+                    'btn_see_tags_label' => __('homepage.projects-section.btn-see_technologies')
+                ]
             ],
             'studies_section' => [
                 'id' => 'studies',

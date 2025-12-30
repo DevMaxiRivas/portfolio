@@ -48,4 +48,8 @@ class Project extends Model
             return Storage::disk('local')->temporaryUrl($path, now()->addMinutes(5));
         }, $this->image_paths) : null;
     }
+    public function getTechnologiesTagsAttribute(): array
+    {
+        return !empty($this->technologies) ? $this->technologies->pluck('name')->toArray() : [];
+    }
 }

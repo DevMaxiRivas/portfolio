@@ -19,7 +19,7 @@
                     @if (!empty($data['link']))
                         <a href="{{ $data['link'] }}" target="_blank"
                             class="btn btn-brand text-capitalize link-custom btn_see">
-                            {{ $data['btn_label'] }}
+                            {{ $btn_label }}
                         </a>
                     @endif
                     @if (!empty($data['tags']))
@@ -28,7 +28,7 @@
                             data-toggle="collapse" data-target="#collapseTags{{ $collapse_id }}" aria-expanded="false"
                             aria-controls="collapseTags{{ $collapse_id }}"
                             wire:click="$js.showTags('{{ $collapse_id }}')">
-                            {{ $data['btn_see_tags'] }}
+                            {{ $btn_see_tags_label }}
                         </button>
                     @endif
                 </div>
