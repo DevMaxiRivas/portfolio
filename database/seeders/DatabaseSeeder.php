@@ -20,9 +20,11 @@ class DatabaseSeeder extends Seeder
         $this->call(TechnologySeeder::class);
         $this->call(ProjectSeeder::class);
         $this->call(ProjectTranslationSeeder::class);
+        $this->call(ProjectTechnologySeeder::class);
         $this->call(StudySeeder::class);
         $this->call(StudyTranslationSeeder::class);
         $this->call(ExperienceSeeder::class);
-        $this->call(ExpericeTranslationSeeder::class);
+        $this->call(ExperienceTranslationSeeder::class);
+        $this->call(CategoryTechnologySeeder::class);
     }
 }

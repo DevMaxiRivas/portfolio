@@ -13,6 +13,8 @@ class Experience extends Model
         'is_visible',
         'start_date',
         'end_date',
+        'created_at',
+        'updated_at'
     ];
 
     public function translations()

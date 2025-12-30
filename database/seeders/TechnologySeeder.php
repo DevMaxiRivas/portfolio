@@ -13,18 +13,92 @@ class TechnologySeeder extends Seeder
      */
     public function run(): void
     {
-        Technology::insert(
-            [
-                ['name' => 'PHP', 'proficiency_level' => 'intermediate'],
-                ['name' => 'JavaScript', 'proficiency_level' => 'intermediate'],
-                ['name' => 'Laravel', 'proficiency_level' => 'intermediate'],
-                ['name' => 'MySQL', 'proficiency_level' => 'intermediate'],
-                ['name' => 'Git', 'proficiency_level' => 'intermediate'],
-                ['name' => 'Docker', 'proficiency_level' => 'Intermediate'],
-                ['name' => 'HTML5', 'proficiency_level' => 'intermediate'],
-                ['name' => 'CSS3', 'proficiency_level' => 'intermediate'],
-                ['name' => 'Python', 'proficiency_level' => 'intermediate'],
-            ]
+        $technologies = array(
+            array(
+                "id" => 1,
+                "name" => "PHP",
+                "proficiency_level" => "intermediate",
+                "created_at" => null,
+                "updated_at" => null
+            ),
+            array(
+                "id" => 2,
+                "name" => "JavaScript",
+                "proficiency_level" => "intermediate",
+                "created_at" => null,
+                "updated_at" => null
+            ),
+            array(
+                "id" => 3,
+                "name" => "Laravel",
+                "proficiency_level" => "intermediate",
+                "created_at" => null,
+                "updated_at" => null
+            ),
+            array(
+                "id" => 4,
+                "name" => "MySQL",
+                "proficiency_level" => "intermediate",
+                "created_at" => null,
+                "updated_at" => null
+            ),
+            array(
+                "id" => 5,
+                "name" => "Git",
+                "proficiency_level" => "intermediate",
+                "created_at" => null,
+                "updated_at" => null
+            ),
+            array(
+                "id" => 6,
+                "name" => "Docker",
+                "proficiency_level" => "intermediate",
+                "created_at" => null,
+                "updated_at" => null
+            ),
+            array(
+                "id" => 7,
+                "name" => "HTML5",
+                "proficiency_level" => "intermediate",
+                "created_at" => null,
+                "updated_at" => null
+            ),
+            array(
+                "id" => 8,
+                "name" => "CSS3",
+                "proficiency_level" => "intermediate",
+                "created_at" => null,
+                "updated_at" => null
+            ),
+            array(
+                "id" => 9,
+                "name" => "Python",
+                "proficiency_level" => "intermediate",
+                "created_at" => null,
+                "updated_at" => null
+            ),
+            array(
+                "id" => 10,
+                "name" => "C",
+                "proficiency_level" => "intermediate",
+                "created_at" => "2025-12-29 15:05:51",
+                "updated_at" => "2025-12-29 15:05:51"
+            ),
+            array(
+                "id" => 11,
+                "name" => "PostgreSQL",
+                "proficiency_level" => "intermediate",
+                "created_at" => "2025-12-29 15:06:55",
+                "updated_at" => "2025-12-29 15:06:55"
+            ),
+            array(
+                "id" => 12,
+                "name" => "Django",
+                "proficiency_level" => "beginner",
+                "created_at" => "2025-12-29 15:15:24",
+                "updated_at" => "2025-12-29 15:15:24"
+            )
         );
+        Technology::insert($technologies);
     }
 }
