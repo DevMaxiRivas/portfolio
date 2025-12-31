@@ -21,6 +21,7 @@ class ProjectResource extends JsonResource
             'title' => $this->title,
             'images_urls' => $this->images_urls,
             'translations' => ProjectTranslationResource::collection($this->whenLoaded('translations')),
+            // Corregir no esta enviando las tecnologias
             'technologies' => ProjectTechnologyResource::collection($this->whenLoaded('technologies')),
             'github_link' => $this->github_link,
         ];

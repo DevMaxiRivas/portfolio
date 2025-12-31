@@ -2,11 +2,13 @@
 
 namespace App\Services;
 
+use App\DTOs\ProjectFilterDTO;
 use App\DTOs\ProjectShowCardDTO;
 use App\Http\Resources\ProjectCollection;
 use App\Http\Resources\ProjectResource;
 use App\Interfaces\ProjectRepositoryInterface;
 use App\Models\Project;
+use Illuminate\Support\Facades\Log;
 
 class ProjectService
 {
@@ -22,5 +24,10 @@ class ProjectService
         return new ProjectCollection(
             $this->repo->getTranslatedProjects()
         );
+    }
+
+    public function getProjects(ProjectFilterDTO $filter)
+    {
+        Log::info($filter->toArray());
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Language;
 use Livewire\Component;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -35,8 +36,8 @@ class ProjectCardListComponent extends Component
     public function fetchData()
     {
         try {
-            $response = Http::get($this->url_resource . '?page=' . $this->currentPage);
-
+            $url = $this->url_resource . '?page=' . $this->currentPage . '&language=' . Language::where('acronym', app()->getLocale())->first()->id;
+            $response = Http::get($url);
             if ($response->successful()) {
                 $data = $response->json();
 

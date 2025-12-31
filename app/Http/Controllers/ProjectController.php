@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\DTOs\ProjectFilterDTO;
 use App\Filters\ProjectFilter;
+use App\Http\Requests\ProjectFilterRequest;
 use App\Http\Resources\ProjectCollection;
 use App\Models\Project;
 use App\Services\ProjectService;
-use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 
 class ProjectController extends Controller
 {
@@ -18,14 +21,25 @@ class ProjectController extends Controller
         $this->service = $service;
     }
 
-    public function index()
+    public function index(ProjectFilterRequest $request)
     {
-        return $this->service->getProjectsTranslated();
+        // return $this->service->getProjectsTranslated();
+        return new ProjectCollection(
+            Project::filter(
+                new ProjectFilter($request)
+            )
+                ->with("technologies")
+                ->get()
+        );
     }
 
-    public function test(ProjectFilter $filter, Request $request)
+    public function test(ProjectFilterRequest $request)
     {
-        Log::info($request->all());
-        return new ProjectCollection(Project::filter($filter)->get());
+        $this->service->getProjects(ProjectFilterDTO::fromRequest($request));
+        return new ProjectCollection(
+            Project::filter(
+                new ProjectFilter($request)
+            )->get()
+        );
     }
 }

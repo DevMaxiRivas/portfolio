@@ -38,4 +38,9 @@ class QueryFilter
 
         return $builder;
     }
+
+    public function getRequest(): Request
+    {
+        return $this->request;
+    }
 }

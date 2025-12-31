@@ -21,11 +21,13 @@ class ProjectShowCardDTO
     {
         return new self(
             id: $data["id"],
-            title: $data['translated_title'],
-            description: $data['translated_description'],
+            title: $data['translations'][0]['title'] ?? $data['title'],
+            description: $data['translations'][0]['description'] ?? "",
             images_urls: $data['images_urls'] ?? [],
             link: $data['github_link'] ?? '',
-            tags: $data['technologies'] ?? []
+            tags: array_map(function ($tech) {
+                return $tech['name'];
+            }, $data['technologies'] ?? [])
         );
     }
 
