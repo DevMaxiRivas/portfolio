@@ -12,6 +12,7 @@ class ProjectFilterDTO
     public function __construct(
         public ?int $id,
         public ?array $technologiesIds,
+        public ?int $languageId,
         public ?string $languageAcronym
     ) {}
 
@@ -21,6 +22,7 @@ class ProjectFilterDTO
             id: $data->id ?? null,
             technologiesIds: $data->technologiesIds ?? [],
             languageAcronym: $data->languageAcronym ?? null,
+            languageId: $data->languageId ?? null
         );
     }
 
@@ -30,6 +32,7 @@ class ProjectFilterDTO
             'id' => $this->id,
             'technologiesIds' => $this->technologiesIds,
             'languageAcronym' => $this->languageAcronym,
+            'languageId' => $this->languageId,
         ];
     }
 }

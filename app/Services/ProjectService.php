@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\DTOs\ProjectFilterDTO;
 use App\DTOs\ProjectShowCardDTO;
+use App\Filters\ProjectFilter;
 use App\Http\Resources\ProjectCollection;
 use App\Http\Resources\ProjectResource;
 use App\Interfaces\ProjectRepositoryInterface;
@@ -28,6 +29,12 @@ class ProjectService
 
     public function getProjects(ProjectFilterDTO $filter)
     {
-        Log::info($filter->toArray());
+        return new ProjectCollection(
+            $this->repo->getProjectsByFilter(
+                new ProjectFilter(
+                    $filter->toArray()
+                )
+            )
+        );
     }
 }

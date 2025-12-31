@@ -36,7 +36,7 @@ class ProjectCardListComponent extends Component
     public function fetchData()
     {
         try {
-            $url = $this->url_resource . '?page=' . $this->currentPage . '&language=' . Language::where('acronym', app()->getLocale())->first()->id;
+            $url = $this->url_resource . '?page=' . $this->currentPage . '&languageAcronym=' . app()->getLocale();
             $response = Http::get($url);
             if ($response->successful()) {
                 $data = $response->json();

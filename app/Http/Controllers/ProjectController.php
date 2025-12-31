@@ -21,25 +21,11 @@ class ProjectController extends Controller
         $this->service = $service;
     }
 
+
     public function index(ProjectFilterRequest $request)
     {
-        // return $this->service->getProjectsTranslated();
-        return new ProjectCollection(
-            Project::filter(
-                new ProjectFilter($request)
-            )
-                ->with("technologies")
-                ->get()
-        );
-    }
-
-    public function test(ProjectFilterRequest $request)
-    {
-        $this->service->getProjects(ProjectFilterDTO::fromRequest($request));
-        return new ProjectCollection(
-            Project::filter(
-                new ProjectFilter($request)
-            )->get()
+        return $this->service->getProjects(
+            filter: ProjectFilterDTO::fromRequest($request)
         );
     }
 }

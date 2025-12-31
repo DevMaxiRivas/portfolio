@@ -2,8 +2,10 @@
 
 namespace App\Repositories;
 
+use App\Filters\ProjectFilter;
 use App\Interfaces\ProjectRepositoryInterface;
 use App\Models\Project;
+use Illuminate\Database\Eloquent\Collection;
 
 class ProjectRepository implements ProjectRepositoryInterface
 {
@@ -23,5 +25,14 @@ class ProjectRepository implements ProjectRepositoryInterface
                 'projects.*'
             )
             ->paginate(4);
+    }
+
+    public function getProjectsByFilter(ProjectFilter $filter): Collection
+    {
+        return Project::filter(
+            $filter
+        )
+            ->with('technologies')
+            ->get();
     }
 }

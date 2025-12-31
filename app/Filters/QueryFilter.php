@@ -3,16 +3,15 @@
 namespace App\Filters;
 
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Http\Request;
 
 class QueryFilter
 {
     protected Builder $builder;
-    protected Request $request;
+    protected array $filters = [];
 
-    public function __construct(Request $request)
+    public function __construct(array $filters)
     {
-        $this->request = $request;
+        $this->filters = $filters;
     }
 
     protected function filter($arr)
@@ -30,8 +29,8 @@ class QueryFilter
     {
         $this->builder = $builder;
 
-        foreach ($this->request->all() as $key => $value) {
-            if (method_exists($this, $key)) {
+        foreach ($this->filters as $key => $value) {
+            if (!empty($value) && method_exists($this, $key)) {
                 $this->$key($value);
             }
         }
@@ -39,8 +38,8 @@ class QueryFilter
         return $builder;
     }
 
-    public function getRequest(): Request
+    public function getFilters(): array
     {
-        return $this->request;
+        return $this->filters;
     }
 }
