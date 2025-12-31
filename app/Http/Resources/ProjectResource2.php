@@ -2,11 +2,10 @@
 
 namespace App\Http\Resources;
 
-use App\Models\ProjectTechnology;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProjectResource extends JsonResource
+class ProjectResource2 extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,10 +17,10 @@ class ProjectResource extends JsonResource
         // dd($this);
         return [
             'id' => $this->id,
-            'title' => $this->title,
+            'translated_title' => $this->translated_title,
+            'translated_description' => $this->translated_description,
             'images_urls' => $this->images_urls,
-            'translations' => ProjectTranslationResource::collection($this->whenLoaded('translations')),
-            'technologies' => ProjectTechnologyResource::collection($this->whenLoaded('technologies')),
+            'technologies' => $this->technologies_tags,
             'github_link' => $this->github_link,
         ];
     }

@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Filters\QueryFilter;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
@@ -21,6 +23,12 @@ class Project extends Model
         'image_paths' => 'array',
         'image_names' => 'array',
     ];
+
+    //IT WILL BE RESPONSABLE TO QUERY THOSE FILTERS
+    public function scopeFilter(Builder $builder, QueryFilter $filters)
+    {
+        return $filters->apply($builder);
+    }
 
     public function language()
     {
