@@ -25,7 +25,8 @@ class ProjectController extends Controller
     public function index(ProjectFilterRequest $request)
     {
         return $this->service->getProjects(
-            filter: ProjectFilterDTO::fromRequest($request)
+            filter: ProjectFilterDTO::fromRequest($request),
+            paginate: $request->perPage
         );
     }
 }

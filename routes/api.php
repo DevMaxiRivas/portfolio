@@ -13,4 +13,3 @@ Route::get('/user', function (Request $request) {
 Route::get('projects', [ProjectController::class, 'index'])->name('api.projects');
 Route::get('experiences', [ExperienceController::class, 'index'])->name('api.experiences');
 Route::get('studies', [StudyController::class, 'index'])->name('api.studies');
-Route::get('test', [ProjectController::class, 'test'])->name('test');

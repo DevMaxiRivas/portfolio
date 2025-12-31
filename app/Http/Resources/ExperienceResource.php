@@ -18,10 +18,10 @@ class ExperienceResource extends JsonResource
             'id' => $this->id,
             'company_name' => $this->company_name,
             'position' => $this->position,
-            'description' => $this->description,
             'start_date' => $this->start_date,
             'end_date' => $this->end_date,
-            'technologies' => $this->technologies_tags,
+            'translations' => ExperienceTranslationResource::collection($this->whenLoaded('translations')),
+            'technologies' => ExperienceTechnologyResource::collection($this->whenLoaded('technologies')),
         ];
     }
 }

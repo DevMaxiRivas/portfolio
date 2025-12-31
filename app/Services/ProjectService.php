@@ -27,13 +27,14 @@ class ProjectService
         );
     }
 
-    public function getProjects(ProjectFilterDTO $filter)
+    public function getProjects(ProjectFilterDTO $filter, ?int $paginate)
     {
         return new ProjectCollection(
             $this->repo->getProjectsByFilter(
-                new ProjectFilter(
+                filter: new ProjectFilter(
                     $filter->toArray()
-                )
+                ),
+                paginate: $paginate,
             )
         );
     }

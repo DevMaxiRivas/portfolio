@@ -27,12 +27,12 @@ class ProjectRepository implements ProjectRepositoryInterface
             ->paginate(4);
     }
 
-    public function getProjectsByFilter(ProjectFilter $filter): Collection
+    public function getProjectsByFilter(ProjectFilter $filter, ?int $paginate = 10)
     {
         return Project::filter(
             $filter
         )
             ->with('technologies')
-            ->get();
+            ->paginate($paginate);
     }
 }

@@ -2,8 +2,10 @@
 
 namespace App\Repositories;
 
+use App\Filters\ExperienceFilter;
 use App\Interfaces\ExperienceRepositoryInterface;
 use App\Models\Experience;
+use Illuminate\Database\Eloquent\Collection;
 
 class ExperienceRepository implements ExperienceRepositoryInterface
 {
@@ -13,19 +15,12 @@ class ExperienceRepository implements ExperienceRepositoryInterface
         return Experience::all()->toArray();
     }
 
-    public function getExperiencesTranslated()
+    public function getExperiencesByFilter(ExperienceFilter $filter, ?int $paginate = 10)
     {
-        return Experience::join('experience_translations', 'experiences.id', '=', 'experience_translations.experience_id')  // Join con translations
-            ->join('languages', 'experience_translations.language_id', '=', 'languages.id')  // Join con languages
-            ->where('languages.acronym', app()->getLocale())  // Filtra por acronym
-            ->select(
-                'experiences.id',
-                'experiences.start_date',
-                'experiences.end_date',
-                'experience_translations.company_name as company_name',
-                'experience_translations.position as position',
-                'experience_translations.description as description'
-            )
-            ->paginate(4);
+        return Experience::filter(
+            $filter
+        )
+            ->with('technologies')
+            ->paginate($paginate);
     }
 }

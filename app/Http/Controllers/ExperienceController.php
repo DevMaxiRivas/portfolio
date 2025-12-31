@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\DTOs\ExperienceFilterDTO;
+use App\Http\Requests\ExperienceFilterRequest;
 use App\Services\ExperienceService;
 use Illuminate\Http\Request;
 
@@ -14,9 +16,11 @@ class ExperienceController extends Controller
         $this->service = $service;
     }
 
-    public function index(Request $request)
+    public function index(ExperienceFilterRequest $request)
     {
-        return $this->service->getExperiences();
+        return $this->service->getExperiences(
+            filter: ExperienceFilterDTO::fromRequest($request),
+            paginate: $request->perPage
+        );
     }
-    //
 }

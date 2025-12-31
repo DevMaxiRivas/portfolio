@@ -28,14 +28,16 @@ class ExperienceShowCardDTO
     {
         return new self(
             id: $data['id'],
-            title: $data['position'],
+            title: $data['translations'][0]['position'] ?? $data['position'],
             subtitle: self::formatSubtitle(
-                company_name: $data['company_name'],
+                company_name: $data['translations'][0]['company_name'] ?? $data['company_name'],
                 start_date: Carbon::parse($data['start_date']),
                 end_date: $data['end_date'] ? Carbon::parse($data['end_date']) : null
             ),
-            description: $data['description'],
-            tags: $data['technologies'],
+            description: $data['translations'][0]['description'] ?? '',
+            tags: array_map(function ($tech) {
+                return $tech['name'];
+            }, $data['technologies'] ?? [])
         );
     }
 

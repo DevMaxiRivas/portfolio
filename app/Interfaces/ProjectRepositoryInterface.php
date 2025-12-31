@@ -9,5 +9,5 @@ interface ProjectRepositoryInterface
 {
     public function getAllProjects(): array;
     public function getTranslatedProjects();
-    public function getProjectsByFilter(ProjectFilter $filter): Collection;
+    public function getProjectsByFilter(ProjectFilter $filter, int $paginate);
 }
