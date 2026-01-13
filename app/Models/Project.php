@@ -6,6 +6,7 @@ use App\Filters\QueryFilter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\URL;
 
 class Project extends Model
 {
@@ -53,9 +54,14 @@ class Project extends Model
     public function getImagesUrlsAttribute(): ?array
     {
         return !empty($this->image_paths) ? array_map(function ($path) {
-            return Storage::disk('local')->temporaryUrl($path, now()->addMinutes(5));
+            $encodedPath = str_replace('\\', '/', $path);
+            $encodedPath = str_replace('//', '/', $encodedPath);
+
+            return Storage::disk('local')->temporaryUrl($encodedPath, now()->addMinutes(1));
         }, $this->image_paths) : null;
     }
+
+
     public function getTechnologiesTagsAttribute(): array
     {
         return !empty($this->technologies) ? $this->technologies->pluck('name')->toArray() : [];

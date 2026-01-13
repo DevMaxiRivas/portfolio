@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Validator;
 
 class ProjectController extends Controller
 {
-    protected final ProjectService $service;
+    protected ProjectService $service;
 
     public function __construct(ProjectService $service)
     {

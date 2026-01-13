@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class ExperienceController extends Controller
 {
-    protected final ExperienceService $service;
+    protected ExperienceService $service;
 
     public function __construct(ExperienceService $service)
     {

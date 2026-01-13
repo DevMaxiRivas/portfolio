@@ -9,7 +9,7 @@ use App\Interfaces\ExperienceRepositoryInterface;
 
 class ExperienceService
 {
-    protected final ExperienceRepositoryInterface $repo;
+    protected ExperienceRepositoryInterface $repo;
     public function __construct(ExperienceRepositoryInterface $repo)
     {
         $this->repo = $repo;

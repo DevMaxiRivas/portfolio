@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Log;
 
 class ProjectService
 {
-    protected final ProjectRepositoryInterface $repo;
+    protected ProjectRepositoryInterface $repo;
 
     public function __construct(ProjectRepositoryInterface $repo)
     {

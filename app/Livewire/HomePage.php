@@ -18,7 +18,7 @@ class HomePage extends Component
                 'subtitle' => __('homepage.projects-section.subtitle'),
                 'data_list' => [
                     'id' => 'project_card_list',
-                    'url_resource' => route('api.projects'),
+                    'url_resource' => config('services.portfolio_api.request_host') . "/api/projects",
                     'dto' => ProjectShowCardDTO::class,
                     'btn_label' => __('homepage.projects-section.btn-see_project'),
                     'btn_see_tags_label' => __('homepage.projects-section.btn-see_technologies')
@@ -30,7 +30,7 @@ class HomePage extends Component
                 'subtitle' => __('homepage.studies-section.subtitle'),
                 'data_list' => [
                     'id' => 'studies_card_list',
-                    'url_resource' => route('api.studies'),
+                    'url_resource' => config('services.portfolio_api.request_host') . "/api/studies",
                     'dto' => StudyShowCardDTO::class,
                     'btn_label' => __('homepage.projects-section.btn-see_project'),
                     'btn_see_tags_label' => __('homepage.projects-section.btn-see_technologies')
@@ -42,7 +42,7 @@ class HomePage extends Component
                 'subtitle' => __('homepage.experiences-section.subtitle'),
                 'data_list' => [
                     'id' => 'experiences_card_list',
-                    'url_resource' => route('api.experiences'),
+                    'url_resource' => config('services.portfolio_api.request_host') . "/api/experiences",
                     'dto' => ExperienceShowCardDTO::class,
                     'btn_label' => __('homepage.experiences-section.btn-see_project'),
                     'btn_see_tags_label' => __('homepage.experiences-section.btn-see_technologies')

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 
 class StudyController extends Controller
 {
-    protected final StudyService $service;
+    protected StudyService $service;
 
     public function __construct(StudyService $service)
     {
@@ -17,7 +17,6 @@ class StudyController extends Controller
 
     public function index(Request $request)
     {
-        Log::info(app()->getLocale());
         return $this->service->getStudies();
     }
 }

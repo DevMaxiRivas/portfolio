@@ -8,7 +8,7 @@ use App\Interfaces\StudyRepositoryInterface;
 
 class StudyService
 {
-    protected final StudyRepositoryInterface $repo;
+    protected StudyRepositoryInterface $repo;
     public function __construct(StudyRepositoryInterface $repo)
     {
         $this->repo = $repo;

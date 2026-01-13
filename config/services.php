@@ -34,5 +34,8 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
-
+    'portfolio_api' => [
+        'http_host' => env('API_PORTFOLIO_HTTP_HOST'),
+        'request_host' => env('API_PORTFOLIO_REQUEST_HOST'),
+    ],
 ];
