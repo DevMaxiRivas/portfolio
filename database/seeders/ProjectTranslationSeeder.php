@@ -62,7 +62,7 @@ class ProjectTranslationSeeder extends Seeder
             array(
                 "id" => 9,
                 "title" => "ALEPH Programming Language",
-                "description" => "<p>Programming language capable of modeling set and list mathematical structures in such a way that programmers are able to manipulate and operate with these structures.<\/p>",
+                "description" => "<p>Programming language capable of modeling set and list mathematical structures in such a way that programmers are able to manipulate and operate with these structures.</p>",
                 "project_id" => 1,
                 "language_id" => 1,
                 "created_at" => "2025-12-29 15:19:05",
@@ -71,7 +71,7 @@ class ProjectTranslationSeeder extends Seeder
             array(
                 "id" => 10,
                 "title" => "CRUD made with PHP and PostgreSQL",
-                "description" => "<p>CRUD is the acronym for Create, Read, Update and Delete. This concept is used to describe the basic operations performed in most databases and information management systems.<\/p>",
+                "description" => "<p>CRUD is the acronym for Create, Read, Update and Delete. This concept is used to describe the basic operations performed in most databases and information management systems.</p>",
                 "project_id" => 2,
                 "language_id" => 1,
                 "created_at" => "2025-12-29 15:19:43",
@@ -80,7 +80,7 @@ class ProjectTranslationSeeder extends Seeder
             array(
                 "id" => 11,
                 "title" => "API Rest made with PHP and PSQL",
-                "description" => "<p>APIs allow you to interact with a computer or system to obtain data or execute a function, so that the system understands the request and fulfills it.<\/p>",
+                "description" => "<p>APIs allow you to interact with a computer or system to obtain data or execute a function, so that the system understands the request and fulfills it.</p>",
                 "project_id" => 3,
                 "language_id" => 1,
                 "created_at" => "2025-12-29 15:20:13",
@@ -89,7 +89,7 @@ class ProjectTranslationSeeder extends Seeder
             array(
                 "id" => 12,
                 "title" => "My Website",
-                "description" => "<p>My website is a way for me to introduce myself and showcase my best work in an organized and easily accessible way.<\/p>",
+                "description" => "<p>My website is a way for me to introduce myself and showcase my best work in an organized and easily accessible way.</p>",
                 "project_id" => 4,
                 "language_id" => 1,
                 "created_at" => "2025-12-29 15:20:49",
@@ -98,7 +98,7 @@ class ProjectTranslationSeeder extends Seeder
             array(
                 "id" => 13,
                 "title" => "Ticket Reservation System",
-                "description" => "<p>Web application developed for the company Tren A Las Nubes, which manages ticket reservations and the purchase of products and meals on its trains.<\/p>",
+                "description" => "<p>Web application developed for the company Tren A Las Nubes, which manages ticket reservations and the purchase of products and meals on its trains.</p>",
                 "project_id" => 5,
                 "language_id" => 1,
                 "created_at" => "2025-12-29 15:21:37",
