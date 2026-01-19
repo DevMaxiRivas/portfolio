@@ -18,6 +18,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
         // Forzar la URL raíz para generación de URLs
         URL::forceRootUrl(config('app.url'));
 
