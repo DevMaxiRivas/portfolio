@@ -4,7 +4,8 @@ return [
         "title" => "soy un analista de sistemas de salta, argentina",
         "subtitle" => "Soy Maximiliano Rivas, diseño soluciones tecnológicas de alto rendimiento, adaptadas a las necesidades específicas de los usuarios, enfocadas en la eficiencia y optimización.",
         "btn_explore_works" => "explora mi trabajo",
-        "btn_contact_me" => "contáctame"
+        "btn_contact_me" => "contáctame",
+        "btn_see_cv" => "Mi curriculum"
     ],
     "profile-section" => [
         "title" => "perfiles",

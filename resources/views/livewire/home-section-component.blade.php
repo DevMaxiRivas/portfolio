@@ -10,8 +10,9 @@
                     {{ __('homepage.home-section.subtitle') }}
                 </p>
                 <div data-aos="fade-up" data-aos-delay="600">
-                    <a href="#projects"
-                        class="text-capitalize btn btn-brand me-3 btn-works">{{ __('homepage.home-section.btn_explore_works') }}</a>
+                    <a href="https://drive.google.com/file/d/1OVFfAnRBSPJWn8eVaqMHuHVPI2d9woG4/view?usp=sharing"
+                        target="_blank"
+                        class="text-capitalize btn btn-brand me-3 btn-works">{{ __('homepage.home-section.btn_see_cv') }}</a>
                     <a href="#contact"
                         class="text-capitalize link-custom btn-contact">{{ __('homepage.home-section.btn_contact_me') }}</a>
                 </div>

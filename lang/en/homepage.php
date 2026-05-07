@@ -4,7 +4,8 @@ return [
         "title" => "I am a systems analyst from Salta, Argentina",
         "subtitle" => "I am Maximiliano Rivas, I design high-performance technological solutions, adapted to the specific needs of users, focused on efficiency and optimization.",
         "btn_explore_works" => "explore my work",
-        "btn_contact_me" => "contact me"
+        "btn_contact_me" => "contact me",
+        "btn_see_cv" => "my curriculum"
     ],
     "profile-section" => [
         "title" => "profiles",
