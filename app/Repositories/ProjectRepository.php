@@ -33,6 +33,8 @@ class ProjectRepository implements ProjectRepositoryInterface
         return Project::filter(
             $filter
         )
+            ->orderByDesc('relevance_level')
+            ->orderByDesc('created_at')
             ->with('technologies')
             ->paginate($paginate);
     }

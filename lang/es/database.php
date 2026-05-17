@@ -8,6 +8,7 @@ return [
                 "title" => "Título",
                 "slug" => "Slug",
                 "is_visible" => "¿Visible?",
+                "relevance_level" => "Nivel de Relevancia",
                 "github_link" => "Enlace de GitHub",
                 "access_link" => "Enlace de Acceso",
                 "image_paths" => "Imágenes",

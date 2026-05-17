@@ -13,7 +13,8 @@ class Project extends Model
     protected $fillable = [
         'title',
         'slug',
-        'language_id',
+        'relevance_level',
+        'is_visible',
         'github_link',
         'access_link',
         'image_paths',
@@ -21,6 +22,8 @@ class Project extends Model
     ];
 
     protected $casts = [
+        'relevance_level' => 'integer',
+        'is_visible' => 'boolean',
         'image_paths' => 'array',
         'image_names' => 'array',
     ];

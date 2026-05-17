@@ -40,8 +40,19 @@ class ProjectForm
                 Toggle::make('is_visible')
                     ->default(true)
                     ->label(__('database.tables.projects.columns.is_visible')),
+                Select::make('relevance_level')
+                    ->label(__('database.tables.projects.columns.relevance_level'))
+                    ->required()
+                    ->options([
+                        1 => 1,
+                        2 => 2,
+                        3 => 3,
+                        4 => 4,
+                        5 => 5
+                    ]),
                 Select::make('technologies')
                     ->multiple()
+                    ->columnSpanFull()
                     ->relationship(name: 'technologies', titleAttribute: 'name')
                     ->preload()
                     ->searchable()
@@ -58,7 +69,7 @@ class ProjectForm
                             ->relationship('categories', 'name')
                             ->multiple()
                             ->preload()
-                            ->required()
+                            ->required(),
                     ]),
 
                 FileUpload::make('image_paths')
