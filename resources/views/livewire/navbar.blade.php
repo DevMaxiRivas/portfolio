@@ -13,7 +13,7 @@
                 <ul class="navbar-nav ms-auto flex-lg-column text-lg-center">
                     @foreach ($items as $item)
                         <li class="nav-item">
-                            <a class="nav-link" href="#{{ $item['id'] }}">{{ $item['name'] }}</a>
+                            <a class="nav-link" href="/#{{ $item['id'] }}">{{ $item['name'] }}</a>
                         </li>
                     @endforeach
                     <!-- Menú desplegable para seleccionar idioma -->
