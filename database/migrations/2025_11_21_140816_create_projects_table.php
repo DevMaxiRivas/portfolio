@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->unique();
+            $table->string('title');
+            $table->string('slug')->unique();
             $table->string('github_link')->nullable();
             $table->string('access_link')->nullable();
             $table->json('image_paths')->nullable();
