@@ -6,6 +6,7 @@ return [
             "plural" => "Projectos",
             "columns" => [
                 "title" => "Título",
+                "slug" => "Slug",
                 "is_visible" => "¿Visible?",
                 "github_link" => "Enlace de GitHub",
                 "access_link" => "Enlace de Acceso",
@@ -20,6 +21,7 @@ return [
             "columns" => [
                 "title" => "Título",
                 "description" => "Descripción",
+                "details" => "Detalles",
                 "language" => "Idioma",
                 "created_at" => "Creado en",
                 "updated_at" => "Actualizado en",
