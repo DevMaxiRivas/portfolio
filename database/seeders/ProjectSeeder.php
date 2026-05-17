@@ -17,8 +17,8 @@ class ProjectSeeder extends Seeder
             array(
                 "id" => 1,
                 "title" => "ALEPH Programming Language",
+                "slug" => "aleph",
                 "github_link" => "https://github.com/DevMaxiRivas/ALEPH_Lenguaje_de_Programacion",
-                "access_link" => "https://github.com/DevMaxiRivas/ALEPH_Lenguaje_de_Programacion",
                 "relevance_level" => 1,
                 "is_visible" => 1,
                 "created_at" => null,
@@ -27,8 +27,8 @@ class ProjectSeeder extends Seeder
             array(
                 "id" => 2,
                 "title" => "CRUD made with PHP and PostgreSQL",
+                "slug" => "crud-php-postgresql",
                 "github_link" => "https://github.com/DevMaxiRivas/CRUD_PHP_PostgreSQL",
-                "access_link" => "https://github.com/DevMaxiRivas/CRUD_PHP_PostgreSQL",
                 "relevance_level" => 1,
                 "is_visible" => 1,
                 "created_at" => null,
@@ -37,8 +37,8 @@ class ProjectSeeder extends Seeder
             array(
                 "id" => 3,
                 "title" => "API Rest made with PHP and PSQL",
+                "slug" => "api-rest-php-psql",
                 "github_link" => "https://github.com/DevMaxiRivas/API-Rest_PHP-PSQL",
-                "access_link" => "https://github.com/DevMaxiRivas/API-Rest_PHP-PSQL",
                 "relevance_level" => 1,
                 "is_visible" => 1,
                 "created_at" => null,
@@ -47,8 +47,8 @@ class ProjectSeeder extends Seeder
             array(
                 "id" => 4,
                 "title" => "My Website",
+                "slug" => "my-website",
                 "github_link" => "https://github.com/DevMaxiRivas/My_Website",
-                "access_link" => "https://github.com/DevMaxiRivas/My_Website",
                 "relevance_level" => 1,
                 "is_visible" => 1,
                 "created_at" => null,
@@ -57,8 +57,8 @@ class ProjectSeeder extends Seeder
             array(
                 "id" => 5,
                 "title" => "Ticket Reservation System",
+                "slug" => "ticket-reservation-system",
                 "github_link" => "https://github.com/DevMaxiRivas/Sistema-de-Reserva-de-Boletos",
-                "access_link" => "https://github.com/DevMaxiRivas/Sistema-de-Reserva-de-Boletos",
                 "relevance_level" => 1,
                 "is_visible" => 1,
                 "created_at" => null,
