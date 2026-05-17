@@ -88,6 +88,23 @@ class TranslationsRelationManager extends RelationManager
                         'strike',
                         'underline',
                         'undo',
+                    ]),
+                RichEditor::make('details')
+                    ->label(__('database.tables.project_translations.columns.details'))
+                    ->columnSpanFull()
+                    ->toolbarButtons([
+                        'blockquote',
+                        'bold',
+                        'bulletList',
+                        'h2',
+                        'h3',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'redo',
+                        'strike',
+                        'underline',
+                        'undo',
                     ])
             ]);
     }

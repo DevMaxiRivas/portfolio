@@ -10,6 +10,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Str;
 
 class ProjectForm
 {
@@ -19,8 +20,18 @@ class ProjectForm
             ->components([
                 TextInput::make('title')
                     ->label(__('database.tables.projects.columns.title'))
-                    ->unique()
-                    ->columnSpanFull()
+                    ->live(debounce: 500) // Updates in real-time as the user types
+                    ->afterStateUpdated(function (string $operation, $state, callable $set) {
+                        if ($operation === 'edit') {
+                            return;
+                        }
+
+                        $set('slug', Str::slug($state));
+                    })
+                    ->required(),
+                TextInput::make('slug')
+                    ->label(__('database.tables.projects.columns.slug'))
+                    ->unique(ignoreRecord: true)
                     ->required(),
                 TextInput::make('github_link')
                     ->label(__('database.tables.projects.columns.github_link')),
@@ -29,10 +40,6 @@ class ProjectForm
                 Toggle::make('is_visible')
                     ->default(true)
                     ->label(__('database.tables.projects.columns.is_visible')),
-                // Select::make('technologies')
-                //     ->label('Tecnologías')
-                //     ->multiple()
-                //     ->relationship('technologies'),
                 Select::make('technologies')
                     ->multiple()
                     ->relationship(name: 'technologies', titleAttribute: 'name')
