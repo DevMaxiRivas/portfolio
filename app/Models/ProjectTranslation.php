@@ -9,6 +9,7 @@ class ProjectTranslation extends Model
     protected $fillable = [
         "title",
         "description",
+        "details",
         "project_id",
         "language_id",
         "created_at",
