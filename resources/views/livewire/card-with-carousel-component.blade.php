@@ -22,7 +22,8 @@
                         </a>
                     @endif
                     @if (!empty($data['tags']))
-                        @php $collapse_id = ucwords(str_replace(' ', '', $data['title'])) @endphp
+                        {{-- @php $collapse_id = ucwords(str_replace(' ', '', $data['title'])) @endphp --}}
+                        @php $collapse_id = str(rand(1, 1000)) @endphp
                         <button class="btn btn-brand text-capitalize link-custom btn_see" type="button"
                             data-toggle="collapse" data-target="#collapseTags{{ $collapse_id }}" aria-expanded="false"
                             aria-controls="collapseTags{{ $collapse_id }}"
