@@ -22,6 +22,7 @@ class ProjectRepository implements ProjectRepositoryInterface
             ->select(
                 'project_translations.title as translated_title',
                 'project_translations.description as translated_description',
+                'project_translations.details as translated_details',
                 'projects.*'
             )
             ->paginate(4);

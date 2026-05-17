@@ -15,14 +15,15 @@ class ProjectResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        // dd($this);
         return [
             'id' => $this->id,
             'title' => $this->title,
             'images_urls' => $this->images_urls,
+            'slug' => $this->slug,
             'translations' => ProjectTranslationResource::collection($this->whenLoaded('translations')),
             'technologies' => ProjectTechnologyResource::collection($this->whenLoaded('technologies')),
             'github_link' => $this->github_link,
+            'access_link' => $this->access_link
         ];
     }
 }

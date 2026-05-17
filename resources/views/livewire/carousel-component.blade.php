@@ -1,5 +1,5 @@
-<div class="card-custom-image rounded-4" wire:ignore>
-    <div id="carouselHeader{{ $id }}" class="carousel slide">
+<div class="card-custom-image rounded-4 bg-white" wire:ignore>
+    <div id="carouselHeader{{ $id }}" class="carousel slide carousel-dark">
         <div class="carousel-indicators">
             @for ($i = 0; $i < count($images_urls); $i++)
                 <button type="button" wire:click="$js.goToSlide({{ $i }})"
@@ -10,7 +10,8 @@
         <div class="carousel-inner">
             @foreach ($images_urls as $image)
                 <div class="carousel-item active">
-                    <img src="{{ $image }}" class="rounded-4 d-block w-100" alt="Imagen de Proyecto">
+                    <img src="{{ $image }}" style="object-fit: cover; height: {{ $height_image }};"
+                        class="rounded-4 d-block w-100" alt="Imagen de Proyecto">
                 </div>
             @endforeach
         </div>
@@ -25,21 +26,6 @@
         </button>
     </div>
 </div>
-
-@assets
-    <style>
-        .card {
-            max-width: 500px;
-            margin: 0 auto;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .carousel-item img {
-            height: 300px;
-            object-fit: cover;
-        }
-    </style>
-@endassets
 
 @script
     <script>

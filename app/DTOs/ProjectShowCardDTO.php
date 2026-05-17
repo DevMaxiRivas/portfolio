@@ -24,7 +24,8 @@ class ProjectShowCardDTO
             title: $data['translations'][0]['title'] ?? $data['title'],
             description: $data['translations'][0]['description'] ?? "",
             images_urls: $data['images_urls'] ?? [],
-            link: $data['github_link'] ?? '',
+            // link: $data['github_link'] ?? '',
+            link: isset($data['translations']) && count($data['translations']) > 0 ? route('projects.page', ['slug' => $data['slug']]) : $data['github_link'],
             tags: array_map(function ($tech) {
                 return $tech['name'];
             }, $data['technologies'] ?? [])

@@ -19,6 +19,11 @@ class ProjectFilter extends QueryFilter
         }]);
     }
 
+    public function slug(string $slug)
+    {
+        return $this->builder->where('slug', $slug);
+    }
+
     public function languageAcronym(string $language_acronym)
     {
         return $this->builder->with(['translations' => function ($query) use ($language_acronym) {

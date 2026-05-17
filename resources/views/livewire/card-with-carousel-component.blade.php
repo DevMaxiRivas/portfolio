@@ -17,8 +17,7 @@
             @if (!empty($data['link']) || !empty($data['tags']))
                 <div class="d-flex justify-content-between gap-2">
                     @if (!empty($data['link']))
-                        <a href="{{ $data['link'] }}" target="_blank"
-                            class="btn btn-brand text-capitalize link-custom btn_see">
+                        <a href="{{ $data['link'] }}" class="btn btn-brand text-capitalize link-custom btn_see">
                             {{ $btn_label }}
                         </a>
                     @endif

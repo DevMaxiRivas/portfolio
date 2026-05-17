@@ -3,14 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\DTOs\ProjectFilterDTO;
-use App\Filters\ProjectFilter;
 use App\Http\Requests\ProjectFilterRequest;
-use App\Http\Resources\ProjectCollection;
-use App\Models\Project;
 use App\Services\ProjectService;
-
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Validator;
 
 class ProjectController extends Controller
 {
@@ -20,8 +14,6 @@ class ProjectController extends Controller
     {
         $this->service = $service;
     }
-
-
     public function index(ProjectFilterRequest $request)
     {
         return $this->service->getProjects(

@@ -19,7 +19,6 @@ class ProjectService
     {
         $this->repo = $repo;
     }
-
     public function getProjectsTranslated()
     {
         return new ProjectCollection(

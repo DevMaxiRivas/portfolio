@@ -17,6 +17,7 @@ class ProjectTranslationResource extends JsonResource
         return [
             "title" => $this->title,
             "description" => $this->description,
+            "details" => $this->details
         ];
     }
 }

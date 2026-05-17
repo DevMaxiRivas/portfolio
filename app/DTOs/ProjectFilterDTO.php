@@ -11,6 +11,7 @@ class ProjectFilterDTO
      */
     public function __construct(
         public ?int $id,
+        public ?string $slug,
         public ?array $technologiesIds,
         public ?int $languageId,
         public ?string $languageAcronym
@@ -20,9 +21,21 @@ class ProjectFilterDTO
     {
         return new self(
             id: $data->id ?? null,
+            slug: $data->slug ?? null,
             technologiesIds: $data->technologiesIds ?? [],
             languageAcronym: $data->languageAcronym ?? null,
             languageId: $data->languageId ?? null
+        );
+    }
+
+    public static function fromArray(array $data): self
+    {
+        return new self(
+            id: $data['id'] ?? null,
+            slug: $data['slug'] ?? null,
+            technologiesIds: $data['technologiesIds'] ?? [],
+            languageAcronym: $data['languageAcronym'] ?? null,
+            languageId: $data['languageId'] ?? null
         );
     }
 
@@ -30,6 +43,7 @@ class ProjectFilterDTO
     {
         return [
             'id' => $this->id,
+            'slug' => $this->slug,
             'technologiesIds' => $this->technologiesIds,
             'languageAcronym' => $this->languageAcronym,
             'languageId' => $this->languageId,
