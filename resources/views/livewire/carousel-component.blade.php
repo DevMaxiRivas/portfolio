@@ -8,8 +8,8 @@
         </div>
 
         <div class="carousel-inner">
-            @foreach ($images_urls as $image)
-                <div class="carousel-item active">
+            @foreach ($images_urls as $index => $image)
+                <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                     <img src="{{ $image }}" style="object-fit: cover; height: {{ $height_image }};"
                         class="rounded-4 d-block w-100" alt="Imagen de Proyecto">
                 </div>
